@@ -1,0 +1,3 @@
+prq() {
+  hub pull-request -m "$1" -b "$2" -h crowdlab-uk:"$3";
+}

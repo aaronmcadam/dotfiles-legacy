@@ -1,0 +1,5 @@
+stripspace() {
+  for f in `find . -name "*.rb"`
+    do git stripspace < $f > ${f}.bak && mv ${f}.bak $f;
+  done
+}
