@@ -4,11 +4,19 @@ alias cap="nocorrect cap"
 alias work="~/Workspace/work"
 
 # general unix
+alias zr="source ~/.zshrc"
+alias sudo="sudo "
+alias r="rm"
+alias rr="rm -rf"
 alias c="clear"
 # recursively create dirs, e.g. mkdir /path/to/this
 alias mkdir="mkdir -p"
 
 # git
+alias h="hub"
+alias hc="hub clone"
+alias hcp="hub clone -p"
+
 alias gsl="g smart-pull"
 alias gci="g ci -am"
 alias gbm="gb -m"
@@ -36,7 +44,7 @@ alias gaa="ga -A" # Stages All changes (new, modified AND deleted)
 alias grb="g rebase -i"
 alias grbl="grb HEAD~2" # git rebase last
 
-# Git-Flow shortcuts
+# Git-Flow
 alias gfl="g fl" # flow
 alias gf="g f"   # feature
 alias gfs="g fs"
@@ -44,14 +52,17 @@ alias gff="g ff"
 alias gr="g r"   # release
 alias grs="g rs"
 alias grf="g rf"
-alias h="hub"
-alias hc="hub clone"
-alias hcp="hub clone -p"
 
 # utils
 alias l="k"
 
-# project shortcuts
+# apps
+alias v="vim"
+alias v.="vim ."
+alias v/="vim ~/.zshrc"
+alias tk="tmux kill-server"
+
+# projects
 alias sc="v /usr/local/etc/nginx/sites-enabled"
 alias capd="cap deploy"
 alias cappd="cap production deploy"
@@ -63,15 +74,7 @@ alias msc="mux start console"
 alias msa="mux start apigem"
 alias msm="mux start motoko"
 
-# app shortcuts
-alias v="vim"
-alias v.="vim ."
-alias v/="vim ~/.zshrc"
-alias m="mvim"
-alias m/="mvim ~/.zshrc"
-alias s/="source ~/.zshrc"
-alias r="rm"
-alias rr="rm -rf"
+# development
 alias rs="rails s"
 alias rg="rails g"
 alias b="bundle"
@@ -90,8 +93,8 @@ alias srp="sr -fp"
 alias srd="sr -fd"
 alias cuke="spring cucumber --format progress"
 alias cr="cuke;srp"
-alias kr="bake tmp:cache:clear;bake konacha:run"
-alias ks="bake tmp:cache:clear;bake konacha:serve"
+alias kr="sake tmp:cache:clear;sake konacha:run"
+alias ks="sake tmp:cache:clear;sake konacha:serve"
 alias crk="cr;kr"
 alias beg="bundle exec guard"
 alias bv="bake version"
@@ -107,13 +110,3 @@ alias rcra="rc -Ra"
 alias rbp="rails_best_practices -f html --with-mvim ."
 alias rgl="rvm gemset list"
 alias rgu="rvm gemset use"
-alias tk="tmux kill-server"
-alias rug="rvm gemset use global"
-alias rud="rvm gem use dash-api3"
-alias zr="source ~/.zshrc"
-alias sudo="sudo "
-alias rackspace="ssh root@31.222.186.202"
-alias s1="ssh root@164.177.153.79"
-alias as1="ssh app_user@164.177.153.79"
-alias s2="ssh root@46.38.185.77"
-alias as2="ssh app_user@46.38.185.77"
