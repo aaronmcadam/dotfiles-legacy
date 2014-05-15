@@ -1,8 +1,12 @@
-[core]
-	excludesfile = /Users/aaron/.gitignore_global
 [user]
 	name = Aaron Mc Adam
 	email = aaron@aaronmcadam.com
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+	ui = true
 [alias]
 	st = status
 	di = diff
@@ -29,16 +33,17 @@
   staged = diff --cached
   unstaged = diff
   current-branch = !git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||'
+[core]
+	excludesfile = ~/.gitignore_global
+  autocrlf = input
 [apply]
 	whitespace = nowarn
-[color]
-	branch = auto
-	diff = auto
-	interactive = auto
-	status = auto
-	ui = true
+[commit]
+  template = ~/.gitmessage
 [branch]
 	autosetupmerge = true
+[fetch]
+  prune = true
 [difftool "Kaleidoscope"]
 	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 [diff]
