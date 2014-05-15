@@ -1,29 +1,29 @@
 [user]
-	name = Aaron Mc Adam
-	email = aaron@aaronmcadam.com
+  name = Aaron Mc Adam
+  email = aaron@aaronmcadam.com
 [color]
-	branch = auto
-	diff = auto
-	interactive = auto
-	status = auto
-	ui = true
+  branch = auto
+  diff = auto
+  interactive = auto
+  status = auto
+  ui = true
 [alias]
-	st = status
-	di = diff
-	co = checkout
-	ci = commit
-	br = branch
-	sta = stash
-	llog = log --date=local
-	f = flow feature
-	fs = flow feature start
-	fl = flow
-	ff = flow feature finish
-	r = flow release
-	rs = flow release start
-	rf = flow release finish
-	d = diff
-	dt = difftool
+  st = status
+  di = diff
+  co = checkout
+  ci = commit
+  br = branch
+  sta = stash
+  llog = log --date=local
+  f = flow feature
+  fs = flow feature start
+  fl = flow
+  ff = flow feature finish
+  r = flow release
+  rs = flow release start
+  rf = flow release finish
+  d = diff
+  dt = difftool
   # Log display from screencast, with train tracks.
   l = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset'
   # Alternate log display from Scott Chacon
@@ -34,31 +34,31 @@
   unstaged = diff
   current-branch = !git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||'
 [core]
-	excludesfile = ~/.gitignore_global
+  excludesfile = ~/.gitignore_global
   autocrlf = input
 [apply]
-	whitespace = nowarn
+  whitespace = nowarn
 [commit]
   template = ~/.gitmessage
 [branch]
-	autosetupmerge = true
+  autosetupmerge = true
 [fetch]
   prune = true
 [difftool "Kaleidoscope"]
-	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 [diff]
-	tool = Kaleidoscope
+  tool = Kaleidoscope
 [difftool]
-	prompt = false
+  prompt = false
 [mergetool "Kaleidoscope"]
-	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-	trustExitCode = true
+  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+  trustExitCode = true
 [mergetool]
-	prompt = false
+  prompt = false
 [merge]
-	tool = Kaleidoscope
+  tool = Kaleidoscope
 [push]
   # Only push branches that have been set up to track a remote branch.
   default = current
 [github]
-	user = aaronmcadam
+  user = aaronmcadam

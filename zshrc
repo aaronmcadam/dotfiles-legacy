@@ -27,6 +27,13 @@ autoload -U colors && colors
 setopt auto_cd
 cdpath=($HOME/Workspace $HOME/Workspace/code $HOME/Workspace/work)
 
+# load our own completion functions
+fpath=(~/.zsh/completion $fpath)
+
+# completion
+autoload -U compinit
+compinit
+
 # load custom executable functions
 for function in ~/.zsh/functions/*; do
   source $function
