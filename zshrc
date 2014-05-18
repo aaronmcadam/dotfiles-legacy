@@ -25,7 +25,7 @@ plugins=(tmux git git-flow brew npm osx jira syntax-highlighting nyan colored-ma
 source $ZSH/oh-my-zsh.sh
 autoload -U colors && colors
 setopt auto_cd
-cdpath=($HOME/Workspace $HOME/Workspace/code $HOME/Workspace/work)
+cdpath=($HOME/Workspace $HOME/Workspace/code $HOME/Workspace/work $HOME)
 
 # load our own completion functions
 fpath=(~/.zsh/completion $fpath)
