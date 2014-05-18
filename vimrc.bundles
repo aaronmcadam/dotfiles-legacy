@@ -10,7 +10,8 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " Define bundles via Github repos
-Bundle 'christoomey/vim-run-interactive'
+Bundle 'vim-scripts/matchit.zip'
+Bundle 'vim-scripts/ctags.vim'
 Bundle 'croaky/vim-colors-github'
 Bundle 'danro/rename.vim'
 Bundle 'kchmck/vim-coffee-script'
@@ -25,7 +26,6 @@ Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-commentary'
-Bundle 'vim-scripts/matchit.zip'
-Bundle 'vim-scripts/ctags.vim'
+Bundle 'christoomey/vim-run-interactive'
 
 filetype on
