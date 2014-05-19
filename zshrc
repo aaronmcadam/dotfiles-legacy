@@ -52,6 +52,9 @@ export RUBY_GC_HEAP_FREE_SLOTS=600000
 export RUBY_GC_HEAP_GROWTH_FACTOR=1.25
 export RUBY_GC_HEAP_GROWTH_MAX_SLOTS=300000
 
+# mkdir .git/safe in the root of repositories you trust
+export PATH=".git/safe/../../bin:$PATH"
+
 export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin:$HOME/.bin
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
