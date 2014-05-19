@@ -1,0 +1,9 @@
+# Run spring if available, falling back to `bundle exec`
+
+sp() {
+  if command -v spring > /dev/null; then
+    spring $@
+  else
+    bundle exec $@
+  fi
+}
