@@ -119,7 +119,7 @@ nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 
 " vim-rspec mappings
-let g:rspec_command = '!spring rspec {spec}'
+" let g:rspec_command = '!spring rspec {spec}'
 nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
 nnoremap <Leader>s :call RunNearestSpec()<CR>
 nnoremap <Leader>l :call RunLastSpec()<CR>
