@@ -32,9 +32,6 @@ filetype plugin indent on
 augroup vimrcEx
   autocmd!
 
-  " For all text files set 'textwidth' to 78 characters.
-  autocmd FileType text setlocal textwidth=78
-
   " When editing a file, always jump to the last known cursor position.
   " Don't do it for commit messages, when the position is invalid, or when
   " inside an event handler (happens when dropping a file on gvim).
@@ -213,7 +210,8 @@ let g:rails_gem_projections = {
 
 "" Set column marker
 highlight ColorColumn guibg=Blue ctermbg=4
-set colorcolumn=80
+set textwidth=80
+set colorcolumn=+1
 
 "" vimdiff current vs git head (fugitive extension) {{{
 nnoremap <Leader>gd :Gdiff<cr>
