@@ -166,6 +166,9 @@ nnoremap ; :
 " highlight git conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
+" Don't change dir when using Startify links
+let g:startify_change_to_dir = 0
+
 " reselect the text that was just pasted
 nnoremap <leader>v V`]
 
