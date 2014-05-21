@@ -215,8 +215,15 @@ highlight ColorColumn guibg=Blue ctermbg=4
 set textwidth=80
 set colorcolumn=+1
 
-"" vimdiff current vs git head (fugitive extension) {{{
-nnoremap <Leader>gd :Gdiff<cr>
+" Fugitive
+nnoremap <Leader>gb :Gblame<CR>
+nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gr :Gread<CR>
+nnoremap <Leader>gw :Gwrite<CR>
+nnoremap <Leader>gc :Gcommit<CR>
+
+"" vimdiff current vs git head
+nnoremap <Leader>gd :Gdiff<CR>
 " Close any corresponding diff buffer
 function! CloseDiff()
   if (&diff == 0 || getbufvar('#', '&diff') == 0)
