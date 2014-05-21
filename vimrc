@@ -217,37 +217,28 @@ set colorcolumn=+1
 
 "" vimdiff current vs git head (fugitive extension) {{{
 nnoremap <Leader>gd :Gdiff<cr>
-"" Close any corresponding diff buffer
-"function! MyCloseDiff()
-"  if (&diff == 0 || getbufvar('#', '&diff') == 0)
-"        \ && (bufname('%') !~ '^fugitive:' && bufname('#') !~ '^fugitive:')
-"    echom "Not in diff view."
-"    return
-"  endif
-"
-"  " close current buffer if alternate is not fugitive but current one is
-"  if bufname('#') !~ '^fugitive:' && bufname('%') =~ '^fugitive:'
-"    if bufwinnr("#") == -1
-"      b #
-"      bd #
-"    else
-"      bd
-"    endif
-"  else
-"    bd #
-"  endif
-"endfunction
-"nnoremap <Leader>gD :call MyCloseDiff()<cr>
+" Close any corresponding diff buffer
+function! CloseDiff()
+  if (&diff == 0 || getbufvar('#', '&diff') == 0)
+        \ && (bufname('%') !~ '^fugitive:' && bufname('#') !~ '^fugitive:')
+    echom "Not in diff view."
+    return
+  endif
 
-"" NERD Tree {{{
-"let NERDTreeChDirMode=2
-"let NERDTreeShowHidden=1
-"noremap <leader>n <Esc>:NERDTree<space>
-"noremap  <F6> :NERDTreeToggle<cr>
-"inoremap <F6> <esc>:NERDTreeToggle<cr>
-"
-"au Filetype nerdtree setlocal nolist
-"
+  " close current buffer if alternate is not fugitive but current one is
+  if bufname('#') !~ '^fugitive:' && bufname('%') =~ '^fugitive:'
+    if bufwinnr("#") == -1
+      b #
+      bd #
+    else
+      bd
+    endif
+  else
+    bd #
+  endif
+endfunction
+nnoremap <Leader>gD :call CloseDiff()<cr>
+
 "" Powerline
 "let g:Powerline_symbols='fancy'
 "
