@@ -11,27 +11,28 @@
   st = status
   di = diff
   co = checkout
-  ci = commit
+  # -v adds the diff to the commit message template
+  ci = commit -v
+  pr = !git push -u && hub pull-request
   br = branch
   sta = stash
   llog = log --date=local
+  fl = flow
   f = flow feature
   fs = flow feature start
-  fl = flow
   ff = flow feature finish
   r = flow release
   rs = flow release start
   rf = flow release finish
+  unstage = reset HEAD
   d = diff
   dt = difftool
-  # Log display from screencast, with train tracks.
+  unstaged = diff
+  staged = diff --cached
+  # Log with train tracks.
   l = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset'
   # Alternate log display from Scott Chacon
   lol = log --pretty=oneline --abbrev-commit --graph --decorate
-  # Other useful aliases:
-  unstage = reset HEAD
-  staged = diff --cached
-  unstaged = diff
   current-branch = !git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||'
 [core]
   excludesfile = ~/.gitignore_global
