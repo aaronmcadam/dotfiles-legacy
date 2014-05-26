@@ -215,8 +215,10 @@ highlight ColorColumn guibg=Blue ctermbg=4
 set textwidth=80
 set colorcolumn=+1
 
+" Airline
+let g:airline_powerline_fonts = 1
+
 " Fugitive
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 nnoremap <Leader>gb :Gblame<CR>
 nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gr :Gread<CR>
