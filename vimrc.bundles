@@ -11,7 +11,7 @@ Plugin 'gmarik/vundle'
 
 " Themes
 Plugin 'croaky/vim-colors-github'
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'blueyed/vim-colors-solarized'
 Plugin 'bling/vim-airline'
 
 " General enhancements

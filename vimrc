@@ -219,7 +219,6 @@ set colorcolumn=+1
 let g:airline_powerline_fonts = 1
 
 " Fugitive
-" set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 nnoremap <Leader>gb :Gblame<CR>
 nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gr :Gread<CR>
