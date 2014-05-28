@@ -8,6 +8,8 @@ alias zr="source ~/.zshrc"
 alias sudo="sudo "
 alias r="rm"
 alias rr="rm -rf"
+alias tf="less +F" # better than tail -f
+alias lf="less +F" # better than tail -f
 alias c="clear"
 # recursively create dirs, e.g. mkdir /path/to/this
 alias mkdir="mkdir -p"
@@ -63,6 +65,7 @@ alias l="k"
 alias v="vim"
 alias v.="vim ."
 alias v/="vim ~/.zshrc"
+alias vu="vim +PluginInstall +qall"
 alias tk="tmux kill-server"
 
 # projects
