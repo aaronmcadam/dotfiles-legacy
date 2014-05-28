@@ -20,7 +20,7 @@ DISABLE_AUTO_TITLE="true"
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
 
-plugins=(tmux git git-flow brew npm osx jira syntax-highlighting nyan colored-man git-flow-completion zsh-syntax-highlighting)
+plugins=(tmux git git-flow git-extras brew osx jira syntax-highlighting git-flow-completion zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 autoload -U colors && colors
