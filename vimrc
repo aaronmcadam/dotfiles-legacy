@@ -218,6 +218,10 @@ set colorcolumn=+1
 " Airline
 let g:airline_powerline_fonts = 1
 
+" Snipmate
+imap <C-J> <Plug>snipMateNextOrTrigger
+smap <C-J> <Plug>snipMateNextOrTrigger
+
 " Fugitive
 nnoremap <Leader>gb :Gblame<CR>
 nnoremap <Leader>gs :Gstatus<CR>

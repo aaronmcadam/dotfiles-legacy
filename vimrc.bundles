@@ -28,6 +28,7 @@ Plugin 'christoomey/vim-run-interactive'
 Plugin 'skwp/greplace.vim'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'kana/vim-textobj-user'
+Plugin 'terryma/vim-multiple-cursors'
 
 " Programming enhancements
 Plugin 'scrooloose/syntastic'
@@ -37,6 +38,10 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'mattn/webapi-vim'
 Plugin 'mattn/gist-vim'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
 
 " Language support
 Plugin 'kchmck/vim-coffee-script'
