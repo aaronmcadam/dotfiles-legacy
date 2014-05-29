@@ -107,7 +107,12 @@ let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
 map <Leader>ct :!ctags -R .<CR>
 
 " Switch between the last two files
-nnoremap <leader><leader> <c-^>
+nnoremap <Leader><Leader> <c-^>
+
+" Change to the directory of the current file, printing the directory
+" after changing, so you know where you ended up
+" Source: http://vim.wikia.com/wiki/Set_working_directory_to_the_current_file
+nnoremap <Leader>cd :cd %:p:h<CR>:pwd<CR>
 
 " Get off my lawn
 nnoremap <Left> :echoe "Use h"<CR>
