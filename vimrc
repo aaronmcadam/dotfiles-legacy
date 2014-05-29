@@ -232,7 +232,7 @@ nnoremap <Leader>gb :Gblame<CR>
 nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gr :Gread<CR>
 nnoremap <Leader>gw :Gwrite<CR>
-nnoremap <Leader>gc :Gcommit<CR>
+nnoremap <Leader>gc :Gcommit -v<CR>
 nnoremap <Leader>gp :Git push<CR>
 
 "" vimdiff current vs git head
