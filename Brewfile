@@ -1,2 +1,21 @@
 tap thoughtbot/formulae
+
+install ag
+install aspell
+install ctags
+install direnv
+install gh
+install git
+install git-flow
+install htop
+install mobile-shell
+install nginx
+install phantomjs
+install postgresql
+install pow
 install rcm
+install rename
+install tmux
+install tree
+install vim
+install zsh
