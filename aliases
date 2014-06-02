@@ -20,7 +20,8 @@ alias hc="hub clone"
 alias hcp="hub clone -p"
 
 alias gsl="g smart-pull"
-alias gci="g ci -am"
+alias gci="g ci"
+alias gcim="g ci -am"
 alias gcia="g ci --amend"
 alias gbm="gb -m"
 alias gbd="gb -d"
@@ -29,6 +30,7 @@ alias gm="g merge --no-ff"
 alias gg="g graft"
 alias gd="g d"
 alias gdt="g difftool"
+alias gdtc="gdt --cached"
 alias s="g status -sb"
 alias gfo="g fetch origin"
 alias glg="g l"
@@ -48,6 +50,7 @@ alias grh="g reset --hard 'HEAD^'"
 alias gaa="ga -A" # Stages All changes (new, modified AND deleted)
 alias grb="g rebase -i"
 alias grbl="grb HEAD~2" # git rebase last
+alias grbd="grb develop"
 
 # Git-Flow
 alias gfl="g fl" # flow
