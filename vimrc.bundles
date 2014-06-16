@@ -43,9 +43,11 @@ Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
+Plugin 'majutsushi/tagbar'
 
 " Language support
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'lukaszkorecki/CoffeeTags'
 Plugin 'tpope/vim-haml'
 Plugin 'tpope/vim-markdown'
 
