@@ -8,7 +8,7 @@ root: ~/Workspace/work/motoko
 # pre: sudo /etc/rc.d/mysqld start
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
-pre_window: rvm gemset use motoko
+# pre_window:
 
 # Pass command line options to tmux. Useful for specifying a different tmux.conf.
 # tmux_options: -f ~/.tmux.mac.conf
@@ -21,5 +21,4 @@ windows:
       layout: 626c,212x50,0,0{155x50,0,0,0,56x50,156,0,3}
       panes:
         - v.
-        - guard
   - scratch:
