@@ -40,10 +40,6 @@ augroup vimrcEx
     \   exe "normal g`\"" |
     \ endif
 
-  " Cucumber navigation commands
-  autocmd User Rails Rnavcommand step features/step_definitions -glob=**/* -suffix=_steps.rb
-  autocmd User Rails Rnavcommand config config -glob=**/* -suffix=.rb -default=routes
-
   " Set syntax highlighting for specific file types
   autocmd BufRead,BufNewFile *.md set filetype=markdown
 
@@ -66,13 +62,15 @@ set list listchars=tab:»·,trail:·
 " Color scheme
 set background=dark
 colorscheme solarized
-highlight NonText guibg=#060606
-highlight Folded  guibg=#0A0A0A guifg=#9090D0
+highlight Visual cterm=reverse
+highlight Search cterm=reverse
 
 " Numbers
 set number
 set relativenumber
 set numberwidth=5
+
+set hlsearch
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
@@ -188,12 +186,6 @@ map <leader>tf :tabfirst<cr>
 map <leader>tl :tablast<cr>
 map <leader>tm :tabmove
 
-" Split autoresize
-set winwidth=84
-set winheight=5
-set winminheight=5
-set winheight=999
-
 " Rails.vim Projections
 let g:rails_projections = {
 \ "app/services/*.rb": {
@@ -259,26 +251,16 @@ function! CloseDiff()
 endfunction
 nnoremap <Leader>gD :call CloseDiff()<cr>
 
-"" Powerline
-"let g:Powerline_symbols='fancy'
-"
-"" Syntastic {{{
-"let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
-"" }}}
-
-" NERDCommenter: add a space to the left delimiter
-"let NERDSpaceDelims=1
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" RENAME CURRENT FILE (thanks Gary Bernhardt)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"function! RenameFile()
-"    let old_name = expand('%')
-"    let new_name = input('New file name: ', expand('%'), 'file')
-"    if new_name != '' && new_name != old_name
-"        exec ':saveas ' . new_name
-"        exec ':silent !rm ' . old_name
-"        redraw!
-"    endif
-"endfunction
-"map <Leader>mv :call RenameFile()<cr>
+function! RenameFile()
+    let old_name = expand('%')
+    let new_name = input('New file name: ', expand('%'), 'file')
+    if new_name != '' && new_name != old_name
+        exec ':saveas ' . new_name
+        exec ':silent !rm ' . old_name
+        redraw!
+    endif
+endfunction
+map <Leader>mv :call RenameFile()<cr>

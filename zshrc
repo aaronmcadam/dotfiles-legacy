@@ -3,7 +3,7 @@ ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
-ZSH_THEME="aaron"
+ZSH_THEME="robbyrussell"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -52,14 +52,19 @@ export RUBY_GC_HEAP_FREE_SLOTS=600000
 export RUBY_GC_HEAP_GROWTH_FACTOR=1.25
 export RUBY_GC_HEAP_GROWTH_MAX_SLOTS=300000
 
+# rbenv
+export RBENV_ROOT="${HOME}/.rbenv"
+
+if [ -d "${RBENV_ROOT}" ]; then
+  export PATH="${RBENV_ROOT}/bin:${PATH}"
+  eval "$(rbenv init - --no-rehash)"
+fi
+
 # Load dotfiles scripts
 export PATH="$HOME/.bin:$PATH"
 
 # Load direnv
 eval "$(direnv hook zsh)"
-
-# Add RVM to PATH for scripting
-export PATH="$PATH:$HOME/.rvm/bin"
 
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
