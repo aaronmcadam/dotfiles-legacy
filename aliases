@@ -1,7 +1,22 @@
-# nocorrect
+alias work="~/Workspace/work"
+alias rv="ruby -v"
+
+# correction
+alias man='nocorrect man'
+alias mv='nocorrect mv'
+alias mysql='nocorrect mysql'
+alias mkdir='nocorrect mkdir'
+alias gist='nocorrect gist'
+alias heroku='nocorrect heroku'
+alias ebuild='nocorrect ebuild'
+alias hpodder='nocorrect hpodder'
+alias sudo='nocorrect sudo'
 alias mux="nocorrect mux"
 alias cap="nocorrect cap"
-alias work="~/Workspace/work"
+
+if [[ "$ENABLE_CORRECTION" == "true" ]]; then
+  setopt correct_all
+fi
 
 # general unix
 alias zr="source ~/.zshrc"
@@ -14,11 +29,58 @@ alias c="clear"
 # recursively create dirs, e.g. mkdir /path/to/this
 alias mkdir="mkdir -p"
 
+# directories
+alias ..='cd ../'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+alias .....='cd ../../../../'
+alias lsa='ls -lah'
+alias ll='ls -lh'
+alias la='ls -lAh'
 # git
 alias h="hub"
 alias hc="hub clone"
 alias hcp="hub clone -p"
 
+alias g='git'
+compdef g=git
+alias gst='git status'
+compdef _git gst=git-status
+alias gd='git diff'
+compdef _git gd=git-diff
+alias gdc='git diff --cached'
+compdef _git gdc=git-diff
+alias gl='git pull'
+compdef _git gl=git-pull
+alias gup='git pull --rebase'
+compdef _git gup=git-fetch
+alias gp='git push'
+compdef _git gp=git-push
+alias gd='git diff'
+gdv() { git diff -w "$@" | view - }
+compdef _git gdv=git-diff
+alias gco='git checkout'
+compdef _git gco=git-checkout
+alias gcm='git checkout master'
+alias gcd="git checkout develop"
+alias grb="g rebase -i"
+compdef _git grbi=git-rebase
+alias grbc='git rebase --continue'
+compdef _git grbc=git-rebase
+alias grba='git rebase --abort'
+compdef _git grba=git-rebase
+alias grbl="grb HEAD~2" # git rebase last
+alias grbd="grb develop"
+alias gb='git branch'
+compdef _git gb=git-branch
+alias gba='git branch -a'
+compdef _git gba=git-branch
+alias ga='git add'
+compdef _git ga=git-add
+alias gaa="ga -A" # Stages All changes (new, modified AND deleted)
+compdef _git ga=git-add
+alias gm='git merge'
+compdef _git gm=git-merge
 alias gsl="g smart-pull"
 alias gci="g ci"
 alias gcim="g ci -am"
@@ -33,24 +95,19 @@ alias gdt="g difftool"
 alias gdtc="gdt --cached"
 alias s="g status -sb"
 alias gfo="g fetch origin"
-alias glg="g l"
+alias glg="g log"
 alias gsa="g stash"
 alias gsp="gsa pop"
 alias gsc="gsa clear"
 alias gso="g remote show origin"
-alias gcom="gco master"
-alias gcod="gco develop"
 alias gcf="gco forum"
 alias glf="gl origin forum"
 alias gpf="gp -f"
 alias gpm="gp origin master; gp origin master --tags"
 alias gpd="gp origin develop; gp origin develop --tags"
 alias gpb="gpm;gpd" # Git Push Both
-alias grh="g reset --hard 'HEAD^'"
-alias gaa="ga -A" # Stages All changes (new, modified AND deleted)
-alias grb="g rebase -i"
-alias grbl="grb HEAD~2" # git rebase last
-alias grbd="grb develop"
+alias grh='git reset HEAD'
+alias grhh='git reset HEAD --hard'
 
 # Git-Flow
 alias gfl="g fl" # flow
