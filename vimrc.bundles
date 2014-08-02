@@ -29,7 +29,9 @@ Plugin 'christoomey/vim-run-interactive'
 Plugin 'skwp/greplace.vim'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'kana/vim-textobj-user'
+Plugin 'austintaylor/vim-indentobject'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'vim-scripts/Align'
 
 " Programming enhancements
 Plugin 'scrooloose/syntastic'
@@ -45,6 +47,8 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'majutsushi/tagbar'
+Plugin 'Shougo/neocomplcache.vim'
+Plugin 'mattn/emmet-vim'
 
 " Language support
 Plugin 'kchmck/vim-coffee-script'

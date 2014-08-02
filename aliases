@@ -38,9 +38,9 @@ alias lsa='ls -lah'
 alias ll='ls -lh'
 alias la='ls -lAh'
 # git
-alias h="hub"
-alias hc="hub clone"
-alias hcp="hub clone -p"
+alias h="gh"
+alias hc="gh clone"
+alias hcp="gh clone -p"
 
 alias g='git'
 compdef g=git
@@ -95,7 +95,7 @@ alias gdt="g difftool"
 alias gdtc="gdt --cached"
 alias s="g status -sb"
 alias gfo="g fetch origin"
-alias glg="g log"
+alias glg="g l"
 alias gsa="g stash"
 alias gsp="gsa pop"
 alias gsc="gsa clear"
@@ -108,6 +108,7 @@ alias gpd="gp origin develop; gp origin develop --tags"
 alias gpb="gpm;gpd" # Git Push Both
 alias grh='git reset HEAD'
 alias grhh='git reset HEAD --hard'
+alias gls='git ls-tree --full-tree -r HEAD' # List files in repo
 
 # Git-Flow
 alias gfl="g fl" # flow

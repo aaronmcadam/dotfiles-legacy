@@ -190,8 +190,18 @@ let g:rails_projections = {
 \   "affinity": "model",
 \   "test": "spec/services/%s_spec.rb",
 \   "related": "app/models/%s.rb",
-\   "template": "class %S\n\n  def run\n  end\nend"
-\ }}
+\   "template": "class %S\n  def call\n  end\nend"
+\ },
+\ "app/assets/javascripts/app/services/*.js.coffee": {
+\   "command": "jservice",
+\   "test": "spec/teaspoon/services/%s_spec.js.coffee",
+\   "template": "define ->\n  class %S\n\n"
+\},
+\ "spec/teaspoon/services/*_spec.js.coffee": {
+\   "command": "jsspec",
+\   "template": "define ['app/services/%s'], (%S) ->\n  describe 'services/%s', ->",
+\   "alternate": "app/assets/javascripts/app/services/%s.js.coffee"
+\}}
 
 let g:rails_gem_projections = {
 \ "draper": {
@@ -252,12 +262,16 @@ nnoremap <Leader>gD :call CloseDiff()<cr>
 "" RENAME CURRENT FILE (thanks Gary Bernhardt)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! RenameFile()
-    let old_name = expand('%')
-    let new_name = input('New file name: ', expand('%'), 'file')
-    if new_name != '' && new_name != old_name
-        exec ':saveas ' . new_name
-        exec ':silent !rm ' . old_name
+    let old_name = expand("%")
+    let new_name = input("New file name: ", expand("%"), "file")
+    if new_name != "" && new_name != old_name
+        exec ":saveas " . new_name
+        exec ":silent !rm " . old_name
         redraw!
     endif
 endfunction
 map <Leader>mv :call RenameFile()<cr>
+
+nnoremap <Leader>c :TagbarToggle<CR>
+let g:neocomplcache_enable_at_startup = 1
+let g:user_emmet_leader_key = "<C-E>"
