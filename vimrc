@@ -1,6 +1,5 @@
-" Use Vim settings, rather then Vi settings. This setting must be as early as
-" possible, as it has side effects.
 set nocompatible
+set modelines=0     " CVE-2007-2438
 
 " Leader
 let mapleader = ","
@@ -48,6 +47,9 @@ augroup vimrcEx
   " Automatically wrap at 80 characters for Markdown
   autocmd BufRead,BufNewFile *.md setlocal textwidth=80
 augroup END
+
+" Include git details in status line
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 " Color scheme
 set background=dark
@@ -218,9 +220,6 @@ let g:rails_gem_projections = {
 highlight ColorColumn guibg=Blue ctermbg=4
 set textwidth=80
 set colorcolumn=+1
-
-" Airline
-let g:airline_powerline_fonts = 1
 
 " Snipmate
 imap <C-J> <Plug>snipMateNextOrTrigger

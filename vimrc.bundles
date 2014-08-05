@@ -10,10 +10,7 @@ call vundle#rc()
 Plugin 'gmarik/vundle'
 
 " Themes
-Plugin 'croaky/vim-colors-github'
-Plugin 'blueyed/vim-colors-solarized'
 Plugin 'chriskempson/vim-tomorrow-theme'
-Plugin 'bling/vim-airline'
 
 " General enhancements
 Plugin 'vim-scripts/matchit.zip'
@@ -21,7 +18,7 @@ Plugin 'vim-scripts/ctags.vim'
 Plugin 'rking/ag.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'JazzCore/ctrlp-cmatcher'
-Plugin 'pbrisbin/vim-mkdir'
+" Plugin 'pbrisbin/vim-mkdir'
 Plugin 'danro/rename.vim'
 Plugin 'tpope/vim-vinegar'
 Plugin 'mhinz/vim-startify'
@@ -31,7 +28,7 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'kana/vim-textobj-user'
 Plugin 'austintaylor/vim-indentobject'
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'vim-scripts/Align'
+" Plugin 'vim-scripts/Align'
 
 " Programming enhancements
 Plugin 'scrooloose/syntastic'
@@ -39,9 +36,9 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-abolish'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'mattn/webapi-vim'
-Plugin 'mattn/gist-vim'
+" Plugin 'airblade/vim-gitgutter'
+" Plugin 'mattn/webapi-vim'
+" Plugin 'mattn/gist-vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
@@ -52,9 +49,9 @@ Plugin 'mattn/emmet-vim'
 
 " Language support
 Plugin 'kchmck/vim-coffee-script'
-Plugin 'lukaszkorecki/CoffeeTags'
-Plugin 'tpope/vim-haml'
-Plugin 'tpope/vim-markdown'
+" Plugin 'lukaszkorecki/CoffeeTags'
+" Plugin 'tpope/vim-haml'
+" Plugin 'tpope/vim-markdown'
 
 " Ruby
 Plugin 'vim-ruby/vim-ruby'
