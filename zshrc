@@ -1,6 +1,12 @@
+# Make sure homebrew's installs apps take precedence over system apps
+export PATH="/usr/local/bin:${PATH}"
+
 autoload -U colors && colors
-setopt auto_cd
-cdpath=($HOME/Workspace $HOME/Workspace/code $HOME/Workspace/work $HOME)
+# setopt auto_cd
+# cd movements from zshkit
+setopt autocd autopushd pushdminus pushdsilent pushdtohome cdablevars
+DIRSTACKSIZE=5
+cdpath=($HOME/workspace $HOME/workspace/repos $HOME/workspace/work $HOME)
 
 # load our own completion functions
 fpath=(~/.zsh/completion $fpath)
@@ -20,29 +26,38 @@ done
 # enable colored output from ls, etc
 export CLICOLOR=1
 
+# history settings
+setopt hist_ignore_all_dups inc_append_history
+HISTFILE=~/.zhistory
+HISTSIZE=4096
+SAVEHIST=4096
+
 # use vim as the visual editor
+# but still use emacs-style ZSH bindings
+# to allow things like reverse-search (Ctrl-R) to work
+# source: http://superuser.com/a/457401/147601
 export VISUAL=vim
 export EDITOR=$VISUAL
+bindkey -e
+
+# Load direnv
+# eval "$(direnv hook zsh)"
+
+# Load scripts
+export PATH="$HOME/.bin:${PATH}"
+
+# aliases
+[[ -f ~/.aliases ]] && source ~/.aliases
 
 # ruby GC performance
 export RUBY_GC_HEAP_INIT_SLOTS=600000
 export RUBY_GC_HEAP_FREE_SLOTS=600000
 export RUBY_GC_HEAP_GROWTH_FACTOR=1.25
 export RUBY_GC_HEAP_GROWTH_MAX_SLOTS=300000
-
 # rbenv
 export RBENV_ROOT="${HOME}/.rbenv"
 
 if [ -d "${RBENV_ROOT}" ]; then
   export PATH="${RBENV_ROOT}/bin:${PATH}"
-  eval "$(rbenv init - --no-rehash)"
+  eval "$(rbenv init - zsh --no-rehash)"
 fi
-
-# Load direnv
-eval "$(direnv hook zsh)"
-
-# Load dotfiles scripts
-export PATH="$HOME/.bin:$PATH"
-
-# aliases
-[[ -f ~/.aliases ]] && source ~/.aliases
