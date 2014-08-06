@@ -40,7 +40,6 @@ brew cask install dropbox
 brew cask install firefox
 brew cask install flowdock
 brew cask install fluid
-brew cask install google-chrome
 brew cask install jumpcut
 brew cask install ksdiff
 brew cask install licecap
