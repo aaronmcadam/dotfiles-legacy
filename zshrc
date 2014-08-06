@@ -1,6 +1,8 @@
 # Make sure homebrew's installs apps take precedence over system apps
 export PATH="/usr/local/bin:${PATH}"
 
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
 autoload -U colors && colors
 # setopt auto_cd
 # cd movements from zshkit
