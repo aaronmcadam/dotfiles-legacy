@@ -14,6 +14,7 @@ brew install git
 brew install git-flow
 brew install htop
 brew install mobile-shell
+brew install node
 brew install nginx
 brew install phantomjs
 brew install postgresql
@@ -46,6 +47,12 @@ brew cask install sizeup
 brew cask install skitch
 brew cask install skype
 brew cask install virtualbox
+
+echo "==========="
+echo "CLEANING UP"
+echo "==========="
+
+brew cask cleanup
 
 echo "==============================================="
 echo "ADDING CASKS DIRECTORY TO ALFRED'S SEARCH SCOPE"
