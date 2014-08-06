@@ -7,6 +7,7 @@ echo "================"
 brew tap thoughtbot/formulae
 
 brew install ag
+brew install chrome-cli
 brew install ctags
 brew install direnv
 brew install gh
