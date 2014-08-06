@@ -49,6 +49,7 @@ brew cask install skitch
 brew cask install skype
 brew cask install spotify
 brew cask install virtualbox
+brew cask install vlc
 
 echo "==========="
 echo "CLEANING UP"
