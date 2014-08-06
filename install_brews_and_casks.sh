@@ -25,6 +25,7 @@ brew install rename
 brew install tmux
 brew install tree
 brew install vim
+brew install z
 brew install zsh
 
 echo "================"
@@ -46,6 +47,7 @@ brew cask install licecap
 brew cask install sizeup
 brew cask install skitch
 brew cask install skype
+brew cask install spotify
 brew cask install virtualbox
 
 echo "==========="
