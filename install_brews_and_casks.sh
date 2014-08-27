@@ -12,6 +12,7 @@ brew install ctags
 brew install direnv
 brew install gh
 brew install git
+brew install git-extras
 brew install git-flow
 brew install htop
 brew install mobile-shell
