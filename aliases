@@ -1,6 +1,9 @@
 alias work="~/Workspace/work"
 alias rv="ruby -v"
 
+# shortcuts
+alias cask="brew cask"
+
 # correction
 alias man='nocorrect man'
 alias mv='nocorrect mv'
@@ -41,6 +44,8 @@ alias la='ls -lAh'
 alias h="gh"
 alias hc="gh clone"
 alias hcp="gh clone -p"
+alias prq="gh pull-request"
+alias prqd="gh pull-request -b crowdlab-uk:develop"
 
 alias g='git'
 compdef g=git
