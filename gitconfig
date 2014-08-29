@@ -1,6 +1,8 @@
 [user]
   name = Aaron Mc Adam
   email = aaron@aaronmcadam.com
+[init]
+  templatedir = ~/.git_template
 [color]
   branch = auto
   diff = auto
@@ -8,32 +10,37 @@
   status = auto
   ui = true
 [alias]
-  st = status
-  di = diff
-  co = checkout
-  # -v adds the diff to the commit message template
-  ci = commit -v
-  pr = !git push -u && hub pull-request
+  aa = add --all
+  ap = add --patch
   br = branch
-  sta = stash
-  llog = log --date=local
-  fl = flow
-  f = flow feature
-  fs = flow feature start
-  ff = flow feature finish
-  r = flow release
-  rs = flow release start
-  rf = flow release finish
-  unstage = reset HEAD
-  d = diff
-  dt = difftool
-  unstaged = diff
-  staged = diff --cached
-  # Log with train tracks.
-  l = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset'
-  # Alternate log display from Scott Chacon
-  lol = log --pretty=oneline --abbrev-commit --graph --decorate
+  ca = commit --amend
+  ci = commit -v # -v adds the diff to the commit message template
+  co = checkout
+  co-pr = !sh -c 'git fetch origin pull/$1/head:pr/$1 && git checkout pr/$1' -
+  create-branch = !sh -c 'git push origin HEAD:refs/heads/$1 && git fetch origin && git branch --track $1 origin/$1 && cd . && git checkout $1' -
   current-branch = !git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||'
+  d = diff
+  delete-branch = !sh -c 'git push origin :refs/heads/$1 && git branch -D $1' -
+  dt = difftool
+  dtc = difftool --cached
+  f = flow feature
+  ff = flow feature finish
+  fl = flow
+  fs = flow feature start
+  l = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset'
+  llog = log --date=local
+  lol = log --pretty=oneline --abbrev-commit --graph --decorate
+  ls = ls-tree --full-tree -r HEAD # List files in repo
+  m = merge
+  pr = !git push -u && gh pull-request
+  r = flow release
+  rf = flow release finish
+  rs = flow release start
+  st = status
+  sta = stash
+  staged = diff --cached
+  unstage = reset HEAD
+  unstaged = diff
 [core]
   excludesfile = ~/.gitignore_global
   autocrlf = input
