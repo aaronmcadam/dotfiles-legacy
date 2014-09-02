@@ -4,6 +4,12 @@ set modelines=0     " CVE-2007-2438
 " Leader
 let mapleader = ","
 
+" Numbers
+set number
+set relativenumber
+set numberwidth=5
+let g:netrw_bufsettings = "noma nomod nu nobl nowrap ro"
+
 set backspace=2   " Backspace deletes like most programs in insert mode
 set nobackup
 set nowritebackup
@@ -63,11 +69,6 @@ set expandtab
 
 " Display extra whitespace
 set list listchars=tab:»·,trail:·
-
-" Numbers
-set number
-set relativenumber
-set numberwidth=5
 
 set hlsearch
 
