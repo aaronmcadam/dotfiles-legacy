@@ -45,6 +45,7 @@ brew cask install fluid
 brew cask install jumpcut
 brew cask install ksdiff
 brew cask install licecap
+brew cask install menumeters
 brew cask install sizeup
 brew cask install skitch
 brew cask install skype
