@@ -39,6 +39,7 @@ brew cask install bartender
 brew cask install bettertouchtool
 brew cask install day-o
 brew cask install dropbox
+brew cask install dropbox-encore
 brew cask install firefox
 brew cask install flowdock
 brew cask install fluid
