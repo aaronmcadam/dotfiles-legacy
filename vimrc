@@ -146,6 +146,7 @@ noremap <Leader>q :qall<cr>
 " configure syntastic syntax checking to check on open as well as save
 let g:syntastic_check_on_open=1
 let g:syntastic_javascript_checker = "jshint"
+let g:syntastic_ruby_checkers = ['rubocop']
 
 "" Source the vimrc file after saving it
 " if has("autocmd")
@@ -275,3 +276,39 @@ map <Leader>mv :call RenameFile()<cr>
 nnoremap <Leader>c :TagbarToggle<CR>
 let g:neocomplcache_enable_at_startup = 1
 let g:user_emmet_leader_key = "<C-E>"
+
+" Seriously, guys. It's not like :W is bound to anything anyway.
+command! W :w
+
+" Location list hack (synastic)
+" https://github.com/scrooloose/syntastic/issues/32
+function! <SID>LocationPrevious()
+  try
+    lprev
+  catch /^Vim\%((\a\+)\)\=:E553/
+    llast
+  endtry
+endfunction
+
+function! <SID>LocationNext()
+  try
+    lnext
+  catch /^Vim\%((\a\+)\)\=:E553/
+    lfirst
+  endtry
+endfunction
+
+nnoremap <silent> <Plug>LocationPrevious :<C-u>exe 'call <SID>LocationPrevious()'<CR>
+nnoremap <silent> <Plug>LocationNext     :<C-u>exe 'call <SID>LocationNext()'<CR>
+
+" source:
+" https://github.com/jferris/dotfiles/commit/d24ffbbf7ef2e19c584b96337002127268e64715
+" vim/plugin/chrome.vim
+function! ReloadChrome()
+  wall
+  execute "!chrome-cli reload"
+endfunction
+
+nmap <Leader>rl :call ReloadChrome()<CR>
+" Change to take a tab number:
+" :map <Leader>rl :!chrome-cli reload -t 2282<CR>

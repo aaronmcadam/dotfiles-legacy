@@ -52,6 +52,11 @@
   autosetupmerge = true
 [fetch]
   prune = true
+[push]
+  # Only push branches that have been set up to track a remote branch.
+  default = current
+[github]
+  user = aaronmcadam
 [difftool "Kaleidoscope"]
   cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 [diff]
@@ -65,8 +70,3 @@
   prompt = false
 [merge]
   tool = Kaleidoscope
-[push]
-  # Only push branches that have been set up to track a remote branch.
-  default = current
-[github]
-  user = aaronmcadam
