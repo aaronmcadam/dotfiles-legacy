@@ -14,16 +14,18 @@ Plugin 'chriskempson/vim-tomorrow-theme'
 
 " General enhancements
 Plugin 'JazzCore/ctrlp-cmatcher'
-Plugin 'christoomey/vim-run-interactive'
 Plugin 'kana/vim-textobj-user'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mhinz/vim-startify'
 Plugin 'rking/ag.vim'
 Plugin 'skwp/greplace.vim'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'jgdavey/tslime.vim'
 Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-vinegar'
+Plugin 'tpope/vim-dispatch'
+Plugin 'wellle/tmux-complete.vim'
 Plugin 'vim-scripts/ctags.vim'
 Plugin 'vim-scripts/matchit.zip'
 
@@ -39,7 +41,6 @@ Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'mattn/emmet-vim'
-Plugin 'jgdavey/vim-blockle'
 
 " Language support
 Plugin 'kchmck/vim-coffee-script'
@@ -48,6 +49,8 @@ Plugin 'tpope/vim-haml'
 Plugin 'tpope/vim-markdown'
 
 " Ruby
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'jgdavey/vim-blockle'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'tpope/vim-bundler'
@@ -55,6 +58,6 @@ Plugin 'tpope/vim-cucumber'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-rake'
-Plugin 'vim-ruby/vim-ruby'
+Plugin 'ecomba/vim-ruby-refactoring'
 
 filetype on

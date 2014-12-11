@@ -143,10 +143,11 @@ alias capd="cap qa deploy"
 alias cappd="cap production deploy"
 alias cv="cat lib/crowdlab/version.rb"
 alias vv="v lib/crowdlab/version.rb"
+alias msa="mux start api"
+alias msc="mux start console"
 alias msd="mux start dash"
 alias msdi="mux start disc"
-alias msc="mux start console"
-alias msa="mux start apigem"
+alias msg="mux start apigem"
 alias msm="mux start motoko"
 
 # development

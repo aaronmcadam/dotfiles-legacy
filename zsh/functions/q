@@ -1,0 +1,7 @@
+function :q() {
+  exit
+}
+
+function ;q() {
+  :q
+}

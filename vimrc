@@ -312,3 +312,11 @@ endfunction
 nmap <Leader>rl :call ReloadChrome()<CR>
 " Change to take a tab number:
 " :map <Leader>rl :!chrome-cli reload -t 2282<CR>
+
+" Run specs using vim-dispatch
+let g:rspec_command = "Dispatch rspec {spec}"
+nmap <Leader>d :Dispatch<space>
+nmap <Leader>r :Start<space>
+
+map <Leader>p :set paste<CR>
+map <Leader>np :set nopaste<CR>
