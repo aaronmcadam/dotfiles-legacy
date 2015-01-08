@@ -118,12 +118,6 @@ nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 
-" vim-rspec mappings
-nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
-nnoremap <Leader>s :call RunNearestSpec()<CR>
-nnoremap <Leader>l :call RunLastSpec()<CR>
-nnoremap <Leader>a :call RunAllSpecs()<CR>
-
 " Run commands that require an interactive shell
 nnoremap <Leader>r :RunInInteractiveShell<space>
 
@@ -223,41 +217,16 @@ highlight ColorColumn guibg=Blue ctermbg=4
 set textwidth=80
 set colorcolumn=+1
 
-" Snipmate
-imap <C-J> <Plug>snipMateNextOrTrigger
-smap <C-J> <Plug>snipMateNextOrTrigger
-
 " Fugitive
 nnoremap <Leader>gb :Gblame<CR>
-nnoremap <Leader>gs :Gstatus<CR>
-nnoremap <Leader>gr :Gread<CR>
-nnoremap <Leader>gw :Gwrite<CR>
 nnoremap <Leader>gc :Gcommit -v<CR>
-nnoremap <Leader>gp :Git push<CR>
-
 "" vimdiff current vs git head
 nnoremap <Leader>gd :Gdiff<CR>
-" Close any corresponding diff buffer
-function! CloseDiff()
-  if (&diff == 0 || getbufvar('#', '&diff') == 0)
-        \ && (bufname('%') !~ '^fugitive:' && bufname('#') !~ '^fugitive:')
-    echom "Not in diff view."
-    return
-  endif
-
-  " close current buffer if alternate is not fugitive but current one is
-  if bufname('#') !~ '^fugitive:' && bufname('%') =~ '^fugitive:'
-    if bufwinnr("#") == -1
-      b #
-      bd #
-    else
-      bd
-    endif
-  else
-    bd #
-  endif
-endfunction
-nnoremap <Leader>gD :call CloseDiff()<cr>
+nnoremap <Leader>gp :Git push<CR>
+nnoremap <Leader>gpf :Git push -f<CR>
+nnoremap <Leader>gr :Gread<CR>
+nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gw :Gwrite<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" RENAME CURRENT FILE (thanks Gary Bernhardt)
@@ -310,13 +279,20 @@ function! ReloadChrome()
 endfunction
 
 nmap <Leader>rl :call ReloadChrome()<CR>
-" Change to take a tab number:
-" :map <Leader>rl :!chrome-cli reload -t 2282<CR>
 
-" Run specs using vim-dispatch
-let g:rspec_command = "Dispatch rspec {spec}"
 nmap <Leader>d :Dispatch<space>
 nmap <Leader>r :Start<space>
-
+" Open runner pane to the right, not to the bottom
+let g:VtrOrientation = "h"
+" Take up 30% of the screen (default is 20%)
+let g:VtrPercentage = 30
+" Attach to a specific pane
+nnoremap <Leader>va :VtrAttachToPane<CR>
+let g:spec_runner_dispatcher = "VtrSendCommand! {command}"
+map <Leader>t <Plug>RunCurrentSpecFile
+map <Leader>s <Plug>RunFocusedSpec
+map <Leader>l <Plug>RunMostRecentSpec
+command! RunAllSpecs VtrSendCommand! rspec spec
+nnoremap <Leader>a :RunAllSpecs<cr>
 map <Leader>p :set paste<CR>
 map <Leader>np :set nopaste<CR>

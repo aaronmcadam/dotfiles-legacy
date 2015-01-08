@@ -46,8 +46,8 @@ alias h="gh"
 alias hc="gh clone"
 alias hcp="gh clone -p"
 alias prq="git push -u && gh pull-request"
-alias prqd="git push -u && gh pull-request -b crowdlab-uk:develop"
-alias prqf="git push -u && gh pull-request -b crowdlab-uk:forum"
+alias prqd="prq -b crowdlab-uk:develop"
+alias prqf="prq -b crowdlab-uk:forum"
 
 alias g='git'
 compdef g=git
