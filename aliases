@@ -45,9 +45,9 @@ alias la='ls -lAh'
 alias h="gh"
 alias hc="gh clone"
 alias hcp="gh clone -p"
-alias prq="git pr"
-alias prqd="git pr -b crowdlab-uk:develop"
-alias prqf="git pr -b crowdlab-uk:forum"
+alias prq="git push -u && gh pull-request"
+alias prqd="git push -u && gh pull-request -b crowdlab-uk:develop"
+alias prqf="git push -u && gh pull-request -b crowdlab-uk:forum"
 
 alias g='git'
 compdef g=git
@@ -149,6 +149,7 @@ alias msd="mux start dash"
 alias msdi="mux start disc"
 alias msg="mux start apigem"
 alias msm="mux start motoko"
+alias mss="mux start scratch"
 
 # development
 alias rs="rails s"
