@@ -275,7 +275,8 @@ nnoremap <silent> <Plug>LocationNext     :<C-u>exe 'call <SID>LocationNext()'<CR
 " vim/plugin/chrome.vim
 function! ReloadChrome()
   wall
-  execute "!chrome-cli reload"
+  silent :!chrome-cli reload
+  redraw!
 endfunction
 
 nmap <Leader>rl :call ReloadChrome()<CR>
