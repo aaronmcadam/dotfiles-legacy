@@ -21,6 +21,7 @@ brew install nginx
 brew install phantomjs
 brew install postgresql
 brew install pow
+brew install reattach-to-user-namespace
 brew install rcm
 brew install rename
 brew install tmux
@@ -44,6 +45,7 @@ brew cask install dropbox-encore
 brew cask install firefox
 brew cask install flowdock
 brew cask install fluid
+brew cask install iterm2
 brew cask install jumpcut
 brew cask install ksdiff
 brew cask install licecap
