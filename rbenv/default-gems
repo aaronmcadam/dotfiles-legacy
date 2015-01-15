@@ -9,3 +9,4 @@ pry-rails
 pry-rescue
 pry-remote
 pry-stack_explorer
+tmuxinator
