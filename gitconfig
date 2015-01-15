@@ -42,7 +42,7 @@
   unstage = reset HEAD
   unstaged = diff
 [core]
-  excludesfile = ~/.gitignore_global
+  excludesfile = ~/.gitignore
   autocrlf = input
 [apply]
   whitespace = nowarn
