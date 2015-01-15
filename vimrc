@@ -228,19 +228,7 @@ nnoremap <Leader>gr :Gread<CR>
 nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gw :Gwrite<CR>
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"" RENAME CURRENT FILE (thanks Gary Bernhardt)
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! RenameFile()
-    let old_name = expand("%")
-    let new_name = input("New file name: ", expand("%"), "file")
-    if new_name != "" && new_name != old_name
-        exec ":saveas " . new_name
-        exec ":silent !rm " . old_name
-        redraw!
-    endif
-endfunction
-map <Leader>mv :call RenameFile()<cr>
+map <Leader>mv :Move<space>
 
 nnoremap <Leader>c :TagbarToggle<CR>
 let g:neocomplcache_enable_at_startup = 1
@@ -270,9 +258,6 @@ endfunction
 nnoremap <silent> <Plug>LocationPrevious :<C-u>exe 'call <SID>LocationPrevious()'<CR>
 nnoremap <silent> <Plug>LocationNext     :<C-u>exe 'call <SID>LocationNext()'<CR>
 
-" source:
-" https://github.com/jferris/dotfiles/commit/d24ffbbf7ef2e19c584b96337002127268e64715
-" vim/plugin/chrome.vim
 function! ReloadChrome()
   wall
   silent :!chrome-cli reload
@@ -282,7 +267,7 @@ endfunction
 nmap <Leader>rl :call ReloadChrome()<CR>
 
 nmap <Leader>d :Dispatch<space>
-nmap <Leader>r :Start<space>
+nmap <Leader>r :VtrSendCommand!<space>
 " Open runner pane to the right, not to the bottom
 let g:VtrOrientation = "h"
 " Take up 30% of the screen (default is 20%)
