@@ -282,3 +282,6 @@ command! RunAllSpecs VtrSendCommand! rspec spec
 nnoremap <Leader>a :RunAllSpecs<cr>
 map <Leader>p :set paste<CR>
 map <Leader>np :set nopaste<CR>
+
+" Use octodown as default build command for Markdown files
+autocmd FileType markdown let b:dispatch = 'octodown %'
