@@ -22,8 +22,11 @@ brew install phantomjs
 brew install postgresql
 brew install pow
 brew install reattach-to-user-namespace
+brew install rbenv
+brew install rbenv-ctags
 brew install rcm
 brew install rename
+brew install ruby-build
 brew install tmux
 brew install tree
 brew install vim
@@ -51,6 +54,7 @@ brew cask install ksdiff
 brew cask install licecap
 brew cask install menumeters
 brew cask install sizeup
+brew cask install slack
 brew cask install skitch
 brew cask install skype
 brew cask install spotify
@@ -63,8 +67,4 @@ echo "==========="
 
 brew cask cleanup
 
-echo "==============================================="
-echo "ADDING CASKS DIRECTORY TO ALFRED'S SEARCH SCOPE"
-echo "==============================================="
-
-brew cask alfred link
+echo "Don't forget to add /opt/homebrew-cask/Caskroom to the Alfred search scope preferences"
