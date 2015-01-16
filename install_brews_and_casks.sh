@@ -47,7 +47,6 @@ brew cask install day-o
 brew cask install dropbox
 brew cask install dropbox-encore
 brew cask install firefox
-brew cask install flowdock
 brew cask install fluid
 brew cask install iterm2
 brew cask install jumpcut
