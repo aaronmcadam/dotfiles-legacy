@@ -52,6 +52,7 @@ brew cask install iterm2
 brew cask install jumpcut
 brew cask install licecap
 brew cask install menumeters
+brew cask install rubymine
 brew cask install sizeup
 brew cask install slack
 brew cask install skitch
