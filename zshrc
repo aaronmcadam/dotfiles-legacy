@@ -5,12 +5,9 @@ setopt autocd autopushd pushdminus pushdsilent pushdtohome cdablevars
 DIRSTACKSIZE=5
 cdpath=($HOME/workspace $HOME/workspace/repos $HOME/workspace/work $HOME)
 
-# load our own completion functions
-fpath=(~/.zsh/completion ~/.zsh/prompts $fpath)
-
 # completion
-autoload -U compinit
-compinit
+fpath=(~/.zsh/completion ~/.zsh/prompts /usr/local/share/zsh-completions $fpath)
+autoload -U compinit && compinit
 
 autoload -U promptinit && promptinit
 prompt pure

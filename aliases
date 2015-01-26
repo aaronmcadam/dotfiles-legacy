@@ -55,6 +55,7 @@ alias gst='g status'
 compdef _git gst=git-status
 alias gcb="g create-branch"
 alias gdb="g delete-branch"
+compdef _git gdb=git-delete-branch
 alias gd='g d'
 compdef _git gd=git-diff
 alias gdc='g diff --cached'
