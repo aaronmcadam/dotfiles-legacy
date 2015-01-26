@@ -15,6 +15,7 @@ brew install git
 brew install git-extras
 brew install git-flow
 brew install htop
+brew install imagemagick
 brew install mobile-shell
 brew install node
 brew install nginx
