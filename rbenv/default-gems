@@ -9,4 +9,7 @@ pry-rails
 pry-rescue
 pry-remote
 pry-stack_explorer
+rails
+rubocop
+scss-lint
 tmuxinator
