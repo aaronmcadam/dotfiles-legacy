@@ -21,6 +21,7 @@ brew install nginx
 brew install phantomjs
 brew install postgresql
 brew install pow
+brew install redis
 brew install reattach-to-user-namespace
 brew install rbenv
 brew install rbenv-ctags
