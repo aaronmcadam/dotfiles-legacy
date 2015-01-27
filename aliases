@@ -121,6 +121,7 @@ alias gls='git ls' # List files in repo
 
 # Git-Flow
 alias gfl="g fl" # flow
+alias gfli="gfl init -d" # initialises flow with default options
 alias gf="g f"   # feature
 alias gfs="g fs"
 alias gff="g ff"
