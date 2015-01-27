@@ -8,6 +8,7 @@ brew tap thoughtbot/formulae
 
 brew install ag
 brew install chrome-cli
+brew install cmake
 brew install ctags
 brew install direnv
 brew install gh
@@ -20,6 +21,7 @@ brew install mobile-shell
 brew install node
 brew install nginx
 brew install phantomjs
+brew install pkg-config
 brew install postgresql
 brew install pow
 brew install redis
