@@ -40,6 +40,9 @@ Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'mattn/emmet-vim'
+Plugin 'AndrewRadev/splitjoin.vim'
+Plugin 'int3/vim-extradite'
+Plugin 'rizzatti/dash.vim'
 
 " Language support
 Plugin 'kchmck/vim-coffee-script'
