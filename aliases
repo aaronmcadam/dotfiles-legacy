@@ -47,7 +47,7 @@ alias hc="gh clone"
 alias hcp="gh clone -p"
 alias prq="git push -u && gh pull-request"
 alias prqd="prq -b crowdlab-uk:develop"
-alias prqf="prq -b crowdlab-uk:forum"
+alias prqm="prq -b crowdlab-uk:master"
 
 alias g='git'
 compdef g=git
@@ -109,8 +109,6 @@ alias gsa="g stash"
 alias gsp="gsa pop"
 alias gsc="gsa clear"
 alias gso="g remote show origin"
-alias gcf="gco forum"
-alias glf="gl origin forum"
 alias gpf="gp -f"
 alias gpm="gp origin master; gp origin master --tags"
 alias gpd="gp origin develop; gp origin develop --tags"
