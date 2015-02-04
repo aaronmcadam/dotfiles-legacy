@@ -84,6 +84,11 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
+" bind K to grep word under cursor
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
+nnoremap \ :Ag<SPACE>
+
 " Tab completion
 " will insert tab at beginning of line,
 " will use completion if not at beginning
@@ -267,6 +272,9 @@ endfunction
 nmap <Leader>rl :call ReloadChrome()<CR>
 
 nmap <Leader>d :Dispatch<space>
+" Use octodown as default build command for Markdown files
+autocmd FileType markdown let b:dispatch = "octodown %"
+nmap <Leader>dd :Dispatch!<CR>
 nmap <Leader>r :VtrSendCommand!<space>
 " Open runner pane to the right, not to the bottom
 let g:VtrOrientation = "h"
@@ -282,6 +290,5 @@ command! RunAllSpecs VtrSendCommand! rspec spec
 nnoremap <Leader>a :RunAllSpecs<cr>
 map <Leader>p :set paste<CR>
 map <Leader>np :set nopaste<CR>
-
-" Use octodown as default build command for Markdown files
-autocmd FileType markdown let b:dispatch = 'octodown %'
+" Bind Dash shortcut
+nmap <silent> <Leader>da <Plug>DashSearch
