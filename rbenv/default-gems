@@ -1,8 +1,10 @@
 awesome_print
 bundler
+hirb
 octodown
 pry
 pry-byebug
+pry-coolline
 pry-clipboard
 pry-doc
 pry-git
