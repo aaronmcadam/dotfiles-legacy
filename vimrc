@@ -133,12 +133,6 @@ let g:html_indent_tags = 'li\|p'
 set splitbelow
 set splitright
 
-" Quicker window movement
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
-
 " close all windows
 noremap <Leader>q :qall<cr>
 
@@ -275,13 +269,38 @@ nmap <Leader>d :Dispatch<space>
 " Use octodown as default build command for Markdown files
 autocmd FileType markdown let b:dispatch = "octodown %"
 nmap <Leader>dd :Dispatch!<CR>
-nmap <Leader>r :VtrSendCommand!<space>
+
+" vim-tmux-runner settings
 " Open runner pane to the right, not to the bottom
 let g:VtrOrientation = "h"
 " Take up 30% of the screen (default is 20%)
 let g:VtrPercentage = 30
+nmap <Leader>r :VtrSendCommand!<space>
 " Attach to a specific pane
 nnoremap <Leader>va :VtrAttachToPane<CR>
+nmap <leader>fs :VtrFlushCommand<cr>:VtrSendCommandToRunner<cr>
+nmap <C-f> :VtrSendLinesToRunner<cr>
+vmap <C-f> <Esc>:VtrSendLinesToRunner<cr>
+nnoremap <leader>sf :w<cr>:call SendFileViaVtr()<cr>
+nnoremap <leader>sl :VtrSendCommandToRunner <cr>
+
+function! SendFileViaVtr()
+  let runners = {
+        \ 'haskell': 'ghci',
+        \ 'ruby': 'ruby',
+        \ 'javascript': 'node',
+        \ 'python': 'python',
+        \ 'sh': 'sh'
+        \ }
+  if has_key(runners, &filetype)
+    let runner = runners[&filetype]
+    let local_file_path = expand('%')
+    execute join(['VtrSendCommandToRunner', runner, local_file_path])
+  else
+    echoerr 'Unable to determine runner'
+  endif
+endfunction
+
 let g:spec_runner_dispatcher = "VtrSendCommand! {command}"
 map <Leader>t <Plug>RunCurrentSpecFile
 map <Leader>s <Plug>RunFocusedSpec
@@ -292,3 +311,13 @@ map <Leader>p :set paste<CR>
 map <Leader>np :set nopaste<CR>
 " Bind Dash shortcut
 nmap <silent> <Leader>da <Plug>DashSearch
+
+" automatically rebalance windows on vim resize
+autocmd VimResized * :wincmd =
+
+" zoom a vim pane, <C-w>= to re-balance
+nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
+nnoremap <leader>= :wincmd =<cr>
+
+" open a tmux pane on the right, occupying 50% of the screen, and start `pry`
+nnoremap <leader>pry :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'pry'}<cr>
