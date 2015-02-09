@@ -2,7 +2,9 @@
 ssh-add 2>/dev/null
 
 # Make sure homebrew installed apps take precedence over system apps
-export PATH="/usr/local/bin:${PATH}"
+# Order path in the following order:
+# dotfiles | homebrew | system path
+export PATH="$HOME/.bin:/usr/local/bin:$PATH"
 
 export RBENV_ROOT="${HOME}/.rbenv"
 if [ -d "${RBENV_ROOT}" ]; then
