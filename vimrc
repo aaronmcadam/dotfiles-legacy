@@ -137,9 +137,12 @@ set splitright
 noremap <Leader>q :qall<cr>
 
 " configure syntastic syntax checking to check on open as well as save
-let g:syntastic_check_on_open=1
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checker = "jshint"
-let g:syntastic_ruby_checkers = ['rubocop']
+let g:syntastic_ruby_checkers = ["rubocop"]
 
 "" Source the vimrc file after saving it
 " if has("autocmd")
@@ -227,7 +230,7 @@ nnoremap <Leader>gr :Gread<CR>
 nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gw :Gwrite<CR>
 
-map <Leader>mv :Move<space>
+map <Leader>mv :Rename<space>
 
 nnoremap <Leader>c :TagbarToggle<CR>
 let g:neocomplcache_enable_at_startup = 1
@@ -262,8 +265,17 @@ function! ReloadChrome()
   silent :!chrome-cli reload
   redraw!
 endfunction
-
 nmap <Leader>rl :call ReloadChrome()<CR>
+
+" Run Rubocop with auto-correct on current file
+function! FixRubocopOffences()
+  w
+  silent :!rubocop % -a
+  silent :e!
+  redraw!
+  echom "Fixable Rubocop Offences auto-corrected."
+endfunction
+nmap <Leader>ru :call FixRubocopOffences()<CR>
 
 nmap <Leader>d :Dispatch<space>
 " Use octodown as default build command for Markdown files
