@@ -1,4 +1,0 @@
-export PATH=$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH
-export POW_DST_PORT=44444
-export NEWRELIC_DISPATCHER=pow
-export POW_WORKERS=1
