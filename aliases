@@ -45,6 +45,8 @@ alias la='ls -lAh'
 alias h="gh"
 alias hc="gh clone"
 alias hcp="gh clone -p"
+# create private repo named after current directory
+alias hcrpc="gh create -p crowdlab-uk/$(basename `pwd`)"
 alias prq="git push -u && gh pull-request"
 alias prqd="prq -b crowdlab-uk:develop"
 alias prqm="prq -b crowdlab-uk:master"
@@ -81,6 +83,8 @@ alias grba='g rebase --abort'
 compdef _git grba=git-rebase
 alias grbl="grb HEAD~2" # git rebase last
 alias grbd="grb develop"
+# git rebase to first commit
+alias grbf="grb `git log --reverse --pretty='%h' | head -1`"
 alias gb='g br'
 compdef _git gb=git-branch
 alias gba='g br -a'
@@ -110,9 +114,9 @@ alias gsp="gsa pop"
 alias gsc="gsa clear"
 alias gso="g remote show origin"
 alias gpf="gp -f"
-alias gpm="gp origin master; gp origin master --tags"
-alias gpd="gp origin develop; gp origin develop --tags"
-alias gpb="gpm;gpd" # Git Push Both
+alias gpm="gp origin master --tags"
+alias gpd="gp origin develop --tags"
+alias gpb="gp origin master develop --tags"
 alias grh='git reset HEAD'
 alias grhh='git reset HEAD --hard'
 alias gls='git ls' # List files in repo
