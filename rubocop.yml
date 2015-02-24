@@ -31,3 +31,5 @@ StringLiterals:
   EnforcedStyle: double_quotes
 TrailingBlankLines:
   EnforcedStyle: final_newline
+Style/MultilineOperationIndentation:
+  EnforcedStyle: indented
