@@ -138,7 +138,7 @@ noremap <Leader>q :qall<cr>
 
 " configure syntastic syntax checking to check on open as well as save
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checker = "jshint"
@@ -276,11 +276,18 @@ function! FixRubocopOffences()
   echom "Fixable Rubocop Offences auto-corrected."
 endfunction
 nmap <Leader>ru :call FixRubocopOffences()<CR>
+" Show syntastic errors
+nmap <Leader>e :Errors<CR>
 
 nmap <Leader>d :Dispatch<space>
-" Use octodown as default build command for Markdown files
-autocmd FileType markdown let b:dispatch = "octodown %"
-nmap <Leader>dd :Dispatch!<CR>
+
+" Use octodown for markdown previews
+function! PreviewMarkdown()
+  w
+  silent :!octodown %
+  redraw!
+endfunction
+nmap <Leader>md :call PreviewMarkdown()<CR>
 
 " vim-tmux-runner settings
 " Open runner pane to the right, not to the bottom
@@ -333,3 +340,8 @@ nnoremap <leader>= :wincmd =<cr>
 
 " open a tmux pane on the right, occupying 50% of the screen, and start `pry`
 nnoremap <leader>pry :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'pry'}<cr>
+
+" Diff buffers
+nnoremap <Leader>di :window diffthis
+" Turn diff mode off
+nnoremap <Leader>do :window diffoff
