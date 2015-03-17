@@ -11,7 +11,7 @@ brew install chrome-cli
 brew install cmake
 brew install ctags
 brew install direnv
-brew install gh
+brew install hub
 brew install git
 brew install git-extras
 brew install git-flow
