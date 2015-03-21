@@ -48,7 +48,6 @@ brew cask install alfred
 brew cask install bartender
 brew cask install bettertouchtool
 brew cask install day-o
-brew cask install dropbox
 brew cask install dropbox-encore
 brew cask install firefox
 brew cask install fluid
@@ -69,6 +68,7 @@ echo "==========="
 echo "CLEANING UP"
 echo "==========="
 
+brew cleanup
 brew cask cleanup
 
 echo "Don't forget to add /opt/homebrew-cask/Caskroom to the Alfred search scope preferences"
