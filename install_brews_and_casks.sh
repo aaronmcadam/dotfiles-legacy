@@ -54,6 +54,7 @@ brew cask install firefox
 brew cask install fluid
 brew cask install iterm2
 brew cask install jumpcut
+brew cask install launchrocket
 brew cask install licecap
 brew cask install menumeters
 brew cask install rubymine
