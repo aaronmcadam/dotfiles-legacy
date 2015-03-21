@@ -59,7 +59,7 @@ set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 " Color scheme
 set background=dark
-colorscheme Tomorrow-Night-Eighties
+colorscheme Tomorrow-Night
 
 " Softtabs, 2 spaces
 set tabstop=2
