@@ -3,7 +3,7 @@
 # cd movements from zshkit
 setopt autocd autopushd pushdminus pushdsilent pushdtohome cdablevars
 DIRSTACKSIZE=5
-cdpath=($HOME/workspace $HOME/workspace/repos $HOME/workspace/work $HOME)
+cdpath=($HOME/workspace/work/apps $HOME/workspace/work/gems $HOME)
 
 # completion
 fpath=(~/.zsh/completion ~/.zsh/prompts $fpath)
