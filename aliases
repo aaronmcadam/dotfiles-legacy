@@ -178,5 +178,4 @@ alias rcr="rc -R"
 alias rcra="rc -Ra"
 alias rcupk="rcup -K" # skip pre and post hooks
 alias rbp="rails_best_practices -f html --with-mvim ."
-alias rgl="rvm gemset list"
-alias rgu="rvm gemset use"
+alias fs="foreman start"
