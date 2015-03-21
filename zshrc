@@ -1,4 +1,4 @@
-autoload -U colors && colors
+# autoload -U colors && colors
 
 # cd movements from zshkit
 setopt autocd autopushd pushdminus pushdsilent pushdtohome cdablevars
@@ -6,7 +6,7 @@ DIRSTACKSIZE=5
 cdpath=($HOME/workspace $HOME/workspace/repos $HOME/workspace/work $HOME)
 
 # completion
-fpath=(~/.zsh/completion ~/.zsh/prompts /usr/local/share/zsh-completions $fpath)
+fpath=(~/.zsh/completion ~/.zsh/prompts $fpath)
 autoload -U compinit && compinit
 
 autoload -U promptinit && promptinit

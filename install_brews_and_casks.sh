@@ -23,7 +23,6 @@ brew install nginx
 brew install phantomjs
 brew install pkg-config
 brew install postgresql
-brew install pow
 brew install redis
 brew install reattach-to-user-namespace
 brew install rbenv
