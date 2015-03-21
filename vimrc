@@ -59,7 +59,7 @@ set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 " Color scheme
 set background=dark
-colorscheme Tomorrow-Night
+colorscheme Tomorrow-Night-Eighties
 
 " Softtabs, 2 spaces
 set tabstop=2
@@ -352,3 +352,9 @@ vmap <Enter> <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+" Pry
+nmap <leader>bp orequire "pry"; binding.pry<esc>^
+
+" Capybara show current page in browser
+nmap <leader>so osave_and_open_page<esc>^

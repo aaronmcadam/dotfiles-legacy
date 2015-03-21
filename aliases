@@ -130,6 +130,7 @@ alias gff="g ff"
 alias gr="g r"   # release
 alias grs="g rs"
 alias grf="g rf"
+alias grfn="g rf -n" # finish release without tagging (for gem projects)
 
 # utils
 alias l="k"
