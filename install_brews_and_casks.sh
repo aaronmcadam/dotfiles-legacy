@@ -7,6 +7,8 @@ echo "================"
 brew tap thoughtbot/formulae
 
 brew install ag
+brew tap Goles/battery
+brew install battery
 brew install chrome-cli
 brew install cmake
 brew install ctags
