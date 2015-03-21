@@ -10,7 +10,7 @@ brew install ag
 brew install chrome-cli
 brew install cmake
 brew install ctags
-brew install direnv
+brew install dnsmasq
 brew install hub
 brew install git
 brew install git-extras
