@@ -14,6 +14,7 @@ pry-rescue
 pry-remote
 pry-stack_explorer
 rails
+rcodetools
 rubocop
 scss-lint
 tmuxinator
