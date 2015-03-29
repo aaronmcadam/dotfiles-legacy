@@ -5,13 +5,12 @@ end
 call plug#begin('~/.vim/bundle')
 
 " Themes
-Plug 'chriskempson/vim-tomorrow-theme'
+Plug 'atelierbram/vim-colors_atelier-schemes'
 
 " General enhancements
 Plug 'JazzCore/ctrlp-cmatcher'
 Plug 'kana/vim-textobj-user'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'mhinz/vim-startify'
 Plug 'rking/ag.vim'
 Plug 'skwp/greplace.vim'
 Plug 'terryma/vim-multiple-cursors'
@@ -19,7 +18,6 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-dispatch'
-Plug 'wellle/tmux-complete.vim'
 Plug 'vim-scripts/ctags.vim'
 Plug 'vim-scripts/matchit.zip'
 
@@ -34,11 +32,11 @@ Plug 'mattn/gist-vim'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'majutsushi/tagbar'
-Plug 'mattn/emmet-vim'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'int3/vim-extradite'
 Plug 'rizzatti/dash.vim'
 Plug 'junegunn/vim-easy-align'
+Plug 'SirVer/ultisnips'
 
 " Language support
 Plug 'kchmck/vim-coffee-script'
