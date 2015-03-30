@@ -1,4 +1,3 @@
-set nocompatible
 set modelines=0     " CVE-2007-2438
 
 if filereadable(expand("~/.vimrc.bundles"))
@@ -68,7 +67,7 @@ nnoremap \ :Ag<SPACE>
 " bind K to grep word under cursor
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
-let mapleader = ","
+let mapleader = " "
 nnoremap <Leader><Leader> <c-^>
 nnoremap <Leader><space> :noh<cr>
 " Change to the directory of the current file, printing the directory
@@ -91,7 +90,7 @@ nnoremap <Leader>gpf :Git push -f<CR>
 nnoremap <Leader>gr :Gread<CR>
 nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gw :Gwrite<CR>
-nnoremap <Leader>l <Plug>RunMostRecentSpec
+nmap <Leader>l <Plug>RunMostRecentSpec
 nnoremap <Leader>md :call PreviewMarkdown()<CR>
 nnoremap <Leader>mv :Rename<space>
 nnoremap <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
@@ -101,18 +100,18 @@ nnoremap <Leader>q :qall!<cr>
 nnoremap <Leader>r :VtrSendCommand!<space>
 nnoremap <Leader>rl :call ReloadChrome()<CR>
 nnoremap <Leader>ru :call FixRubocopOffences()<CR>
-nnoremap <Leader>va :VtrAttachToPane<CR>
-nnoremap <Leader>s <Plug>RunFocusedSpec
-nnoremap <Leader>t <Plug>RunCurrentSpecFile
-nnoremap <Leader>tt :tabnew<cr>
-nnoremap <Leader>tc :tabclose<cr>
-nnoremap <Leader>te :tabedit
-nnoremap <Leader>tf :tabfirst<cr>
-nnoremap <Leader>tn :tabnext<cr>
-nnoremap <Leader>tl :tablast<cr>
-nnoremap <Leader>tm :tabmove
-nnoremap <Leader>to :tabonly<cr>
-nnoremap <Leader>tp :tabprevious<cr>
+nmap <Leader>va :VtrAttachToPane<CR>
+nmap <Leader>s <Plug>RunFocusedSpec
+nmap <Leader>t <Plug>RunCurrentSpecFile
+nmap <Leader>tt :tabnew<cr>
+nmap <Leader>tc :tabclose<cr>
+nmap <Leader>te :tabedit
+nmap <Leader>tf :tabfirst<cr>
+nmap <Leader>tn :tabnext<cr>
+nmap <Leader>tl :tablast<cr>
+nmap <Leader>tm :tabmove
+nmap <Leader>to :tabonly<cr>
+nmap <Leader>tp :tabprevious<cr>
 " reselect the text that was just pasted
 nnoremap <Leader>v V`]
 
