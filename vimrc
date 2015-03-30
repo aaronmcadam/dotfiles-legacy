@@ -23,6 +23,8 @@ set autowrite     " Automatically :write before running commands
 set backspace=2   " Backspace deletes like most programs in insert mode
 set cursorline cursorcolumn
 set colorcolumn=+1
+" Always use vertical diffs
+set diffopt+=vertical
 set expandtab
 set history=50
 set hlsearch
@@ -45,6 +47,7 @@ set splitright
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 set tabstop=2
 set textwidth=80
+set wildmode=list:longest,list:full
 
 let g:netrw_bufsettings = "noma nomod nu nobl nowrap ro"
 
@@ -59,6 +62,8 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
 command! W :w
 nnoremap ; :
+inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
+inoremap <S-Tab> <c-n>
 nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
@@ -69,7 +74,7 @@ nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 let mapleader = " "
 nnoremap <Leader><Leader> <c-^>
-nnoremap <Leader><space> :noh<cr>
+nmap <Leader><space> :noh<cr>
 " Change to the directory of the current file, printing the directory
 " after changing, so you know where you ended up
 " Source: http://vim.wikia.com/wiki/Set_working_directory_to_the_current_file
@@ -115,28 +120,6 @@ nmap <Leader>tp :tabprevious<cr>
 " reselect the text that was just pasted
 nnoremap <Leader>v V`]
 
-function! FixRubocopOffences()
-  w
-  silent :!rubocop % -a
-  silent :e!
-  redraw!
-  echom "Fixable Rubocop Offences auto-corrected."
-endfunction
-
-function! PreviewMarkdown()
-  w
-  silent :!octodown %
-  redraw!
-endfunction
-
-function! ReloadChrome()
-  wall
-  silent :!chrome-cli reload
-  redraw!
-endfunction
-
-command! RunAllSpecs VtrSendCommand! rspec spec
-
 augroup vimrcEx
   autocmd!
 
@@ -151,11 +134,16 @@ augroup vimrcEx
   " Set syntax highlighting for specific file types
   autocmd BufRead,BufNewFile *.md set filetype=markdown
 
-  " Enable spellchecking for Markdown
+  " Automatically wrap at 80 characters and spell check Markdown
   autocmd FileType markdown setlocal spell
-
-  " Automatically wrap at 80 characters for Markdown
   autocmd BufRead,BufNewFile *.md setlocal textwidth=80
+
+  " Automatically wrap at 72 characters and spell check git commit messages
+  autocmd FileType gitcommit setlocal textwidth=72
+  autocmd FileType gitcommit setlocal spell
+
+  " Allow stylesheets to autocomplete hyphenated words
+  autocmd FileType css,scss,sass setlocal iskeyword+=-
 augroup END
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
@@ -184,6 +172,56 @@ let g:VtrPercentage = 30
 " nnoremap <leader>sf :w<cr>:call SendFileViaVtr()<cr>
 " nnoremap <leader>sl :VtrSendCommandToRunner <cr>
 
+let g:spec_runner_dispatcher = "VtrSendCommand! {command}"
+
+" zoom a vim pane, <C-w>= to re-balance
+" nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
+" nnoremap <leader>= :wincmd =<cr>
+
+" vim-easy-align
+" Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
+xmap <Enter> <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
+let g:UltiSnipsExpandTrigger="<c-t>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+function! FixRubocopOffences()
+  w
+  silent :!rubocop % -a
+  silent :e!
+  redraw!
+  echom "Fixable Rubocop Offences auto-corrected."
+endfunction
+
+" Tab completion
+" will insert tab at beginning of line,
+" will use completion if not at beginning
+function! InsertTabWrapper()
+  let col = col('.') - 1
+  if !col || getline('.')[col - 1] !~ '\k'
+    return "\<tab>"
+  else
+    return "\<c-p>"
+  endif
+endfunction
+
+function! PreviewMarkdown()
+  w
+  silent :!octodown %
+  redraw!
+endfunction
+
+function! ReloadChrome()
+  wall
+  silent :!chrome-cli reload
+  redraw!
+endfunction
+
+command! RunAllSpecs VtrSendCommand! rspec spec
+
 " function! SendFileViaVtr()
 "   let runners = {
 "         \ 'haskell': 'ghci',
@@ -200,19 +238,3 @@ let g:VtrPercentage = 30
 "     echoerr 'Unable to determine runner'
 "   endif
 " endfunction
-
-let g:spec_runner_dispatcher = "VtrSendCommand! {command}"
-
-" zoom a vim pane, <C-w>= to re-balance
-" nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
-" nnoremap <leader>= :wincmd =<cr>
-
-" vim-easy-align
-" Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
-vmap <Enter> <Plug>(EasyAlign)
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
-
-let g:UltiSnipsExpandTrigger="<c-t>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
