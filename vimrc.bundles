@@ -11,13 +11,12 @@ Plug 'atelierbram/vim-colors_atelier-schemes'
 Plug 'JazzCore/ctrlp-cmatcher'
 Plug 'kana/vim-textobj-user'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'rking/ag.vim'
-Plug 'skwp/greplace.vim'
+Plug 'rking/ag.vim', { 'on': 'Ag' }
+Plug 'skwp/greplace.vim', { 'on': 'Gsearch' }
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
-Plug 'tpope/vim-dispatch'
 Plug 'vim-scripts/ctags.vim'
 Plug 'vim-scripts/matchit.zip'
 
@@ -27,22 +26,19 @@ Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
-Plug 'mattn/webapi-vim'
-Plug 'mattn/gist-vim'
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
-Plug 'majutsushi/tagbar'
-Plug 'AndrewRadev/splitjoin.vim'
+Plug 'mattn/webapi-vim', { 'on': 'Gist' }
+Plug 'mattn/gist-vim', { 'on': 'Gist' }
 Plug 'int3/vim-extradite'
 Plug 'rizzatti/dash.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'SirVer/ultisnips'
 
 " Language support
-Plug 'kchmck/vim-coffee-script'
-Plug 'lukaszkorecki/CoffeeTags'
-Plug 'tpope/vim-haml'
-Plug 'tpope/vim-markdown'
+Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
+Plug 'lukaszkorecki/CoffeeTags', { 'for': 'coffee' }
+Plug 'tpope/vim-haml', { 'for': 'haml' }
+Plug 'tpope/vim-markdown', { 'for': 'md' }
+Plug 'evanmiller/nginx-vim-syntax', { 'for': 'conf' }
 
 " Ruby
 Plug 'vim-ruby/vim-ruby'
