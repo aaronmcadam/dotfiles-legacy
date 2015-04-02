@@ -20,6 +20,7 @@ set background=dark
 colorscheme base16-ateliersulphurpool
 
 set autowrite     " Automatically :write before running commands
+set autoread      " Reload files changed outside vim
 set backspace=2   " Backspace deletes like most programs in insert mode
 set cursorline cursorcolumn
 set colorcolumn=+1
@@ -71,6 +72,9 @@ nnoremap <Down> :echoe "Use j"<CR>
 nnoremap \ :Ag<SPACE>
 " bind K to grep word under cursor
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+nmap s ysi
+nmap S ysa
+nmap SS ys$
 
 let mapleader = " "
 nnoremap <Leader><Leader> <c-^>
@@ -83,9 +87,9 @@ nnoremap <Leader>bp orequire "pry"; binding.pry<esc>^
 nnoremap <Leader>cd :cd %:p:h<CR>:pwd<CR>
 nnoremap <Leader>ct :!ctags -R .<CR>
 nnoremap <silent> <Leader>da <Plug>DashSearch
-nnoremap <Leader>di :window diffthis
+nnoremap <Leader>di :windo diffthis<CR>
 nnoremap <Leader>so osave_and_open_page<esc>^
-nnoremap <Leader>do :window diffoff
+nnoremap <Leader>do :windo diffoff<CR>
 nnoremap <Leader>e :Errors<CR>
 nnoremap <Leader>gb :Gblame<CR>
 nnoremap <Leader>gc :Gcommit -v<CR>
@@ -101,7 +105,7 @@ nnoremap <Leader>mv :Rename<space>
 nnoremap <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
 " open a tmux pane on the right, occupying 50% of the screen, and start `pry`
 nnoremap <Leader>pry :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'pry'}<cr>
-nnoremap <Leader>q :qall!<cr>
+nnoremap <Leader>q :qa!<CR>
 nnoremap <Leader>r :VtrSendCommand!<space>
 nnoremap <Leader>rl :call ReloadChrome()<CR>
 nnoremap <Leader>ru :call FixRubocopOffences()<CR>
@@ -185,8 +189,8 @@ xmap <Enter> <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 let g:UltiSnipsExpandTrigger="<c-t>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsJumpForwardTrigger="<c-t>"
+let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 
 function! FixRubocopOffences()
   w

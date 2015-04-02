@@ -1,0 +1,62 @@
+snippet cla "class <class_name> def initialize ... end end"
+class ${1:class_name}
+	def initialize(${2:*args})
+		$0
+	end
+end
+endsnippet
+
+snippet mod "module"
+module ${1:module_name}
+	${0:${VISUAL:}}
+end
+endsnippet
+
+snippet req
+require "${1}"
+$0
+endsnippet
+
+snippet rs
+require "spec_helper"
+$0
+endsnippet
+
+snippet rrs
+require "rails_helper"
+$0
+endsnippet
+
+snippet con "rspec: context block"
+context "$1" do
+	${0:${VISUAL:# assertions...}}
+end
+endsnippet
+
+snippet des "Describe"
+describe "${1:subject}" do
+	$0
+end
+endsnippet
+
+snippet it "It"
+it "${1:does something}"${2: do
+	$3
+end}
+endsnippet
+
+snippet "\b(de)?f" "def <name>..." r
+def ${1:method_name}${2:(${3:*args})}
+	$0
+end
+endsnippet
+
+snippet defi "def initialize ..."
+def initialize${1:(${2:*args})}
+	$0
+end
+endsnippet
+
+snippet "\b(r|attr)" "attr_reader :<attr_names>" r
+attr_reader :${0:attr_names}
+endsnippet
