@@ -27,9 +27,6 @@
   ff = flow feature finish
   fl = flow
   fs = flow feature start
-  l = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset'
-  llog = log --date=local
-  lol = log --pretty=oneline --abbrev-commit --graph --decorate
   ls = ls-tree --full-tree -r HEAD # List files in repo
   m = merge
   pr = !git push -u && gh pull-request
@@ -45,6 +42,20 @@
   ls-untracked = !sh -c 'git ls-files -v | grep "^[[:lower:]]"'
   unstage = reset HEAD
   unstaged = diff
+  # Fancy logging.
+  #   h = head
+  #   hp = head with patch
+  #   r = recent commits, only current branch
+  #   ra = recent commits, all reachable refs
+  #   l = all commits, only current branch
+  #   la = all commits, all reachable refs
+  head = !git r -1
+  h = !git head
+  hp = "!. ~/.githelpers && show_git_head"
+  r = !GIT_NO_PAGER=1 git l -30
+  ra = !git r --all
+  l = "!. ~/.githelpers && pretty_git_log"
+  la = !git l --all
 [core]
   excludesfile = ~/.gitignore
   autocrlf = input
