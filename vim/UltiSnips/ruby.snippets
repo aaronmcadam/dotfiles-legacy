@@ -39,6 +39,12 @@ describe "${1:subject}" do
 end
 endsnippet
 
+snippet dest "Describe using file name"
+describe `!v rails#camelize(expand("%:t:r"))` do
+	$0
+end
+endsnippet
+
 snippet it "It"
 it "${1:does something}"${2: do
 	$3
