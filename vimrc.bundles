@@ -21,6 +21,7 @@ Plug 'vim-scripts/ctags.vim'
 Plug 'vim-scripts/matchit.zip'
 
 " Programming enhancements
+Plug 'mattn/emmet-vim'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
