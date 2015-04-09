@@ -36,6 +36,19 @@ describe `!v SpecDescribedClass()` do
 end
 endsnippet
 
+snippet ch "require controller_helper"
+require "controller_helper"
+$0
+endsnippet
+
+snippet cspec "Rails Controller spec scaffold"
+require "controller_helper"
+
+describe `!v SpecDescribedClass()` do
+	$0
+end
+endsnippet
+
 snippet rh "require rails_helper"
 require "rails_helper"
 $0
