@@ -1,0 +1,12 @@
+# Runs rubycritic on a PR against a develop branch
+
+function rcpr() {
+  echo "running rubycritic against the develop branch..."
+  rubycritic $(diffrb) > /dev/null
+  echo "done, opening report..."
+  open tmp/rubycritic/overview.html
+}
+
+function diffrb() {
+  git diff --name-only --diff-filter=ACMRT develop | grep .rb
+}
