@@ -8,5 +8,5 @@ function rcpr() {
 }
 
 function diffrb() {
-  git diff --name-only --diff-filter=ACMRT develop | grep .rb
+  git diff --name-only --diff-filter=ACMRT develop | ag .rb
 }
