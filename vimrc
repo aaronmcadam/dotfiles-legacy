@@ -86,7 +86,7 @@ nnoremap <Leader>a :RunAllSpecs<cr>
 nnoremap <Leader>bp orequire "pry"; binding.pry<esc>^
 nnoremap <Leader>cd :cd %:p:h<CR>:pwd<CR>
 nnoremap <Leader>ct :!ctags -R .<CR>
-nnoremap <silent> <Leader>da <Plug>DashSearch
+nmap <silent> <Leader>da <Plug>DashSearch
 nnoremap <Leader>di :windo diffthis<CR>
 nnoremap <Leader>so osave_and_open_page<esc>^
 nnoremap <Leader>do :windo diffoff<CR>
