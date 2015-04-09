@@ -32,6 +32,8 @@ Plug 'mattn/gist-vim', { 'on': 'Gist' }
 Plug 'int3/vim-extradite'
 Plug 'rizzatti/dash.vim'
 Plug 'junegunn/vim-easy-align'
+Plug 'ervandew/supertab'
+Plug 'Valloric/YouCompleteMe'
 Plug 'SirVer/ultisnips'
 
 " Language support

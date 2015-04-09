@@ -12,19 +12,54 @@ module ${1:module_name}
 end
 endsnippet
 
-snippet req
+snippet req "require <file>"
 require "${1}"
 $0
 endsnippet
 
-snippet rs
+snippet reqd "require_dependency <file>"
+require "${1}"
+$0
+endsnippet
+
+snippet sh "require spec_helper"
 require "spec_helper"
 $0
 endsnippet
 
-snippet rrs
+snippet spec "spec scaffold"
+require "spec_helper"
+require "`!v SpecDescribedClassPath()`"
+
+describe `!v SpecDescribedClass()` do
+	$0
+end
+endsnippet
+
+snippet rh "require rails_helper"
 require "rails_helper"
 $0
+endsnippet
+
+snippet rspec "Rails spec scaffold"
+require "rails_helper"
+
+describe `!v SpecDescribedClass()` do
+	$0
+end
+endsnippet
+
+snippet fh "require feature_spec_helper"
+require "feature_spec_helper"
+$0
+endsnippet
+
+snippet feat "feature spec scaffold"
+require "feature_spec_helper"
+
+feature "`!v DefaultFeatureTitle()`" do
+	$0
+end
 endsnippet
 
 snippet con "rspec: context block"
@@ -39,19 +74,19 @@ describe "${1:subject}" do
 end
 endsnippet
 
-snippet dest "Describe using file name"
+snippet desf "Describe using file name"
 describe `!v rails#camelize(expand("%:t:r"))` do
 	$0
 end
 endsnippet
 
-snippet it "It"
+snippet it "rspec: it"
 it "${1:does something}"${2: do
 	$3
 end}
 endsnippet
 
-snippet "\b(de)?f" "def <name>..." r
+snippet def "def <name>..."
 def ${1:method_name}${2:(${3:*args})}
 	$0
 end

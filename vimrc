@@ -63,8 +63,6 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
 command! W :w
 nnoremap ; :
-inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
-inoremap <S-Tab> <c-n>
 nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
@@ -167,9 +165,9 @@ let g:syntastic_ruby_checkers = ["rubocop"]
 
 " vim-tmux-runner settings
 " Open runner pane to the right, not to the bottom
-let g:VtrOrientation = "h"
+" let g:VtrOrientation = "h"
 " " Take up 30% of the screen (default is 20%)
-let g:VtrPercentage = 30
+" let g:VtrPercentage = 30
 " nmap <leader>fs :VtrFlushCommand<cr>:VtrSendCommandToRunner<cr>
 " nmap <C-f> :VtrSendLinesToRunner<cr>
 " vmap <C-f> <Esc>:VtrSendLinesToRunner<cr>
@@ -188,28 +186,12 @@ xmap <Enter> <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
-let g:UltiSnipsExpandTrigger="<c-t>"
-let g:UltiSnipsJumpForwardTrigger="<c-t>"
-let g:UltiSnipsJumpBackwardTrigger="<c-b>"
-
 function! FixRubocopOffences()
   w
   silent :!rubocop % -a
   silent :e!
   redraw!
   echom "Fixable Rubocop Offences auto-corrected."
-endfunction
-
-" Tab completion
-" will insert tab at beginning of line,
-" will use completion if not at beginning
-function! InsertTabWrapper()
-  let col = col('.') - 1
-  if !col || getline('.')[col - 1] !~ '\k'
-    return "\<tab>"
-  else
-    return "\<c-p>"
-  endif
 endfunction
 
 function! PreviewMarkdown()
@@ -242,3 +224,73 @@ command! RunAllSpecs VtrSendCommand! rspec spec
 "     echoerr 'Unable to determine runner'
 "   endif
 " endfunction
+
+" Completion functionality, unifying supertab, ultisnips, and YouCompleteMe
+" via http://stackoverflow.com/a/22253548/1626737
+
+"-----------------------------------------------------------
+" YouCompleteMe - Intelligent completion with fuzzy matching
+"-----------------------------------------------------------
+let g:ycm_dont_warn_on_startup = 0
+let g:ycm_complete_in_comments = 1
+let g:ycm_complete_in_strings = 1
+let g:ycm_collect_identifiers_from_comments_and_strings = 1
+
+let g:ycm_filetype_blacklist = {}
+
+let g:ycm_key_list_select_completion   = ['<C-j>', '<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
+
+"--------------------------------------------------
+" Supertab - enhanced tab behavior based on context
+"--------------------------------------------------
+let g:SuperTabDefaultCompletionType    = '<C-n>'
+let g:SuperTabCrMapping                = 0
+
+"----------------------------------------
+" UltiSnips - Fancy snippet functionality
+"----------------------------------------
+let g:UltiSnipsSnippetsDir='~/.vim/snippets'
+let g:UltiSnipsEditSplit='vertical'
+let g:UltiSnipsExpandTrigger           = '<tab>'
+let g:UltiSnipsJumpForwardTrigger      = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger     = '<s-tab>'
+
+nnoremap <leader>ue :UltiSnipsEdit<cr>
+
+function! SpecDescribedClass()
+  let spec_name = SpecDescribedClassPath()
+  let spec_types = ["lib", "models", "controllers", "services", "mailers",
+                   \"helpers", "policies"]
+  for path in spec_types
+    let spec_name = substitute(spec_name, "^" . path . "/", "", "")
+  endfor
+  return rails#camelize(spec_name)
+endfunction
+
+function! SpecDescribedClassPath()
+  let spec_path = substitute(expand("%:r"), "_spec$", "", "")
+  let spec_path = substitute(spec_path, "^" . SpecRoot() . "/", "", "")
+  let spec_path = substitute(spec_path, "^spec/", "", "")
+  return spec_path
+endfunction
+
+function! SpecRoot()
+  if strlen(RailsRoot()) > 0
+    return RailsRoot()
+  else
+    return getcwd()
+  endif
+endfunction
+
+function! DefaultFeatureTitle()
+  let filename = expand("%:t")
+  let without_suffix = substitute(filename, "_spec.rb$", "", "")
+  let humanized = substitute(without_suffix, "_", " ", "g")
+  let title = Capitalize(humanized)
+  return title
+endfunction
+
+function! Capitalize(string)
+  return substitute(a:string, "^\\w", "\\u\\0", "")
+endfunction
