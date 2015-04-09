@@ -1,0 +1,13 @@
+function wrap_with_module() {
+  # /bin/bash wrap.sh input.rb 'ModuleName'
+  # Run on multiple files with:
+  # for file in `find . -name "*.rb"`; do /bin/bash wrap.sh $file 'Abc' > $file.tmp && mv $file.tmp $file; done
+  if [ -z $1 ]; then echo "Input file is not defined" && exit -1; fi
+  if [ -z $2 ]; then echo "Module name is not defined" && exit -1; fi
+
+  start=$(egrep -n '^(class|module)' $1 | head -n 1 | cut -d ':' -f 1)
+  if (( start > 1 )); then head -n $((start - 1)) $1; fi
+  echo "module $2"
+  tail -n +$start $1 | sed 's/^/  /'
+  echo "end"
+}
