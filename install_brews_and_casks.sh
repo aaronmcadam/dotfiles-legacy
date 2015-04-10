@@ -36,6 +36,7 @@ brew install ruby-build
 brew install tmux
 brew install tree
 brew install vim
+brew install youtube-dl
 brew install z
 brew install zsh
 brew install zsh-completions
