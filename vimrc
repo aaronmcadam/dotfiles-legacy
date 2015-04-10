@@ -101,13 +101,10 @@ nmap <Leader>l <Plug>RunMostRecentSpec
 nnoremap <Leader>md :call PreviewMarkdown()<CR>
 nnoremap <Leader>mv :Rename<space>
 nnoremap <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
-" open a tmux pane on the right, occupying 50% of the screen, and start `pry`
-nnoremap <Leader>pry :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'pry'}<cr>
 nnoremap <Leader>q :qa!<CR>
 nnoremap <Leader>r :VtrSendCommand!<space>
 nnoremap <Leader>rl :call ReloadChrome()<CR>
 nnoremap <Leader>ru :call FixRubocopOffences()<CR>
-nmap <Leader>va :VtrAttachToPane<CR>
 nmap <Leader>s <Plug>RunFocusedSpec
 nmap <Leader>t <Plug>RunCurrentSpecFile
 nmap <Leader>tt :tabnew<cr>
@@ -164,17 +161,31 @@ let g:syntastic_javascript_checkers = ["jshint"]
 let g:syntastic_ruby_checkers = ["rubocop"]
 
 " vim-tmux-runner settings
-" Open runner pane to the right, not to the bottom
-" let g:VtrOrientation = "h"
-" " Take up 30% of the screen (default is 20%)
-" let g:VtrPercentage = 30
 " nmap <leader>fs :VtrFlushCommand<cr>:VtrSendCommandToRunner<cr>
 " nmap <C-f> :VtrSendLinesToRunner<cr>
 " vmap <C-f> <Esc>:VtrSendLinesToRunner<cr>
 " nnoremap <leader>sf :w<cr>:call SendFileViaVtr()<cr>
 " nnoremap <leader>sl :VtrSendCommandToRunner <cr>
-
 let g:spec_runner_dispatcher = "VtrSendCommand! {command}"
+let g:VtrUseVtrMaps = 1
+" Mapping      |   Command
+" -----------------------------
+" <leader>rr   |   VtrResizeRunner<cr>
+" <leader>ror  |   VtrReorientRunner<cr>
+" <leader>sc   |   VtrSendCommandToRunner<cr>
+" <leader>sl   |   VtrSendLineToRunner<cr>
+" <leader>or   |   VtrOpenRunner<cr>
+" <leader>kr   |   VtrKillRunner<cr>
+" <leader>fr   |   VtrFocusRunner<cr>
+" <leader>dr   |   VtrDetachRunner<cr>
+" <leader>ar   |   VtrReattachRunner<cr>
+" <leader>cr   |   VtrClearRunner<cr>
+" <leader>fc   |   VtrFlushCommand<cr>
+nmap <Leader>va :VtrAttachToPane<CR>
+nnoremap <Leader>sd :VtrSendCtrlD<CR>
+nmap <leader>osr :VtrOpenRunner {'orientation': 'h', 'percentage': 50}<CR>
+" open a tmux pane on the right, occupying 50% of the screen, and start `pry`
+nnoremap <Leader>pry :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'pry'}<CR>
 
 " zoom a vim pane, <C-w>= to re-balance
 " nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
