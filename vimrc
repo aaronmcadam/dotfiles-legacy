@@ -102,7 +102,6 @@ nnoremap <Leader>md :call PreviewMarkdown()<CR>
 nnoremap <Leader>mv :Rename<space>
 nnoremap <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
 nnoremap <Leader>q :qa!<CR>
-nnoremap <Leader>r :VtrSendCommand!<space>
 nnoremap <Leader>rl :call ReloadChrome()<CR>
 nnoremap <Leader>ru :call FixRubocopOffences()<CR>
 nmap <Leader>s <Plug>RunFocusedSpec
@@ -168,6 +167,7 @@ let g:syntastic_ruby_checkers = ["rubocop"]
 " nnoremap <leader>sl :VtrSendCommandToRunner <cr>
 let g:spec_runner_dispatcher = "VtrSendCommand! {command}"
 let g:VtrUseVtrMaps = 1
+let g:VtrPercentage = 35
 " Mapping      |   Command
 " -----------------------------
 " <leader>rr   |   VtrResizeRunner<cr>
@@ -181,6 +181,7 @@ let g:VtrUseVtrMaps = 1
 " <leader>ar   |   VtrReattachRunner<cr>
 " <leader>cr   |   VtrClearRunner<cr>
 " <leader>fc   |   VtrFlushCommand<cr>
+nnoremap <Leader>r :VtrSendCommand!<space>
 nmap <Leader>va :VtrAttachToPane<CR>
 nnoremap <Leader>sd :VtrSendCtrlD<CR>
 nmap <leader>osr :VtrOpenRunner {'orientation': 'h', 'percentage': 50}<CR>
