@@ -6,8 +6,12 @@ DIRSTACKSIZE=5
 cdpath=($HOME/workspace/work/apps $HOME/workspace/work/gems $HOME)
 
 # completion
+autoload -U compinit
+compinit
+
+# load our own completion functions
 fpath=(~/.zsh/completion ~/.zsh/prompts $fpath)
-autoload -U compinit && compinit
+autoload -Uz ~/.zsh/completion/*(:t)
 
 autoload -U promptinit && promptinit
 prompt pure
