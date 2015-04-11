@@ -1,4 +1,6 @@
+.bundle
+.git/
 log
 tags
 tmp
-.bundle
+vendor
