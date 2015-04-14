@@ -100,7 +100,7 @@ nnoremap <Leader>gw :Gwrite<CR>
 nmap <Leader>l <Plug>RunMostRecentSpec
 nnoremap <Leader>md :call PreviewMarkdown()<CR>
 nnoremap <Leader>mv :Rename<space>
-nnoremap <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
+nnoremap <Leader>p :r!pbpaste<cr>
 nnoremap <Leader>q :qa!<CR>
 nnoremap <Leader>rl :call ReloadChrome()<CR>
 nnoremap <Leader>ru :call FixRubocopOffences()<CR>
