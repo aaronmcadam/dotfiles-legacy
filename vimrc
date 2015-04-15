@@ -97,6 +97,8 @@ nnoremap <Leader>gpf :Git push -f<CR>
 nnoremap <Leader>gr :Gread<CR>
 nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gw :Gwrite<CR>
+"Indent file and return to current line
+noremap <Leader>i mmgg=G`m<cr>
 nmap <Leader>l <Plug>RunMostRecentSpec
 nnoremap <Leader>md :call PreviewMarkdown()<CR>
 nnoremap <Leader>mv :Rename<space>
