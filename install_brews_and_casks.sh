@@ -30,6 +30,7 @@ brew install reattach-to-user-namespace
 brew install rbenv
 brew install rbenv-ctags
 brew install rbenv-default-gems
+brew install rbenv-gem-rehash
 brew install rcm
 brew install rename
 brew install ruby-build
