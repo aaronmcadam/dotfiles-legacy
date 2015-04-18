@@ -48,3 +48,7 @@ export RUBY_GC_HEAP_GROWTH_FACTOR=1.25
 export RUBY_GC_HEAP_GROWTH_MAX_SLOTS=300000
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+autoload edit-command-line
+zle -N edit-command-line
+bindkey '^Xe' edit-command-line
