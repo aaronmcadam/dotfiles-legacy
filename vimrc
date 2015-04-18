@@ -77,11 +77,11 @@ nmap SS ys$
 let mapleader = " "
 nnoremap <Leader><Leader> <c-^>
 nmap <Leader><space> :noh<cr>
+nnoremap <Leader>a :RunAllSpecs<cr>
+nnoremap <Leader>bp orequire "pry"; binding.pry<esc>^
 " Change to the directory of the current file, printing the directory
 " after changing, so you know where you ended up
 " Source: http://vim.wikia.com/wiki/Set_working_directory_to_the_current_file
-nnoremap <Leader>a :RunAllSpecs<cr>
-nnoremap <Leader>bp orequire "pry"; binding.pry<esc>^
 nnoremap <Leader>cd :cd %:p:h<CR>:pwd<CR>
 nnoremap <Leader>ct :!ctags -R .<CR>
 imap <Leader>cw @crowdlab-uk/web<space>
