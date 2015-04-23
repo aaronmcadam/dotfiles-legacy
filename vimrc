@@ -9,13 +9,11 @@ endif
 "   autocmd bufwritepost .vimrc source ~/.vimrc
 " endif
 
-" Set column marker
-highlight ColorColumn guibg=Blue ctermbg=6
-
 syntax enable
 filetype plugin indent on
 
 " Color scheme
+set t_Co=256
 set background=dark
 colorscheme base16-ateliersulphurpool
 
@@ -23,6 +21,7 @@ set autowrite     " Automatically :write before running commands
 set autoread      " Reload files changed outside vim
 set backspace=2   " Backspace deletes like most programs in insert mode
 set cursorline cursorcolumn
+hi ColorColumn ctermbg=red
 set colorcolumn=+1
 " Always use vertical diffs
 set diffopt+=vertical
@@ -33,7 +32,8 @@ set incsearch     " do incremental searching
 set laststatus=2  " Always display the status line
 set list listchars=tab:»·,trail:·
 set nobackup
-set noswapfile    " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
+" http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
+set noswapfile
 set nowritebackup
 set number
 set relativenumber
