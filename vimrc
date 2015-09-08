@@ -77,7 +77,7 @@ nmap SS ys$
 let mapleader = " "
 nnoremap <Leader><Leader> <c-^>
 nmap <Leader><space> :noh<cr>
-nnoremap <Leader>a :RunAllSpecs<cr>
+nnoremap <Leader>a :wall<cr>:RunAllSpecs<cr>
 nnoremap <Leader>bp orequire "pry"; binding.pry<esc>^
 " Change to the directory of the current file, printing the directory
 " after changing, so you know where you ended up
@@ -153,10 +153,13 @@ if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
 
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+  let g:ctrlp_user_command = 'ag %s -l --hidden --nocolor -g ""'
 
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
+
+  " Allow opening multiple splits with same file via CtrlP
+  let g:ctrlp_switch_buffer = 0
 endif
 
 let g:syntastic_javascript_checkers = ["jshint"]
@@ -216,8 +219,12 @@ function! PreviewMarkdown()
 endfunction
 
 function! ReloadChrome()
+  if exists("g:chrome_tab_number")
+    silent execute '!chrome-cli reload -t ' . g:chrome_tab_number
+  else
+    silent execute '!chrome-cli reload'
+  end
   wall
-  silent :!chrome-cli reload
   redraw!
 endfunction
 
@@ -309,3 +316,20 @@ endfunction
 function! Capitalize(string)
   return substitute(a:string, "^\\w", "\\u\\0", "")
 endfunction
+
+function! Spatch()
+  let sessions = system("tmux list-sessions -F '#{session_name}'")
+
+  let target = input('Enter target: ')
+  let target_session = matchstr(target, '[[:alnum:]_-]\+')
+
+  if (sessions =~ target_session) && (target_session != '')
+    let g:spec_runner_dispatcher = "call system(\"tmux send -t "
+          \                        . target .
+          \                        " C-L '{command}' ENTER\")"
+  else
+    let g:spec_runner_dispatcher = "VtrSendCommand! {command}"
+  endif
+endfunction
+
+nnoremap <expr> <Leader>x Spatch()

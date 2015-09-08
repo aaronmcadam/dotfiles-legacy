@@ -42,6 +42,7 @@ Plug 'lukaszkorecki/CoffeeTags', { 'for': 'coffee' }
 Plug 'tpope/vim-haml', { 'for': 'haml' }
 Plug 'tpope/vim-markdown', { 'for': 'md' }
 Plug 'evanmiller/nginx-vim-syntax', { 'for': 'conf' }
+Plug 'mustache/vim-mustache-handlebars'
 
 " Ruby
 Plug 'vim-ruby/vim-ruby'
