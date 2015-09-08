@@ -21,6 +21,9 @@ done
 export GIT_RADAR_COLOR_LOCAL_AHEAD="%F{yellow}"
 export GIT_RADAR_COLOR_LOCAL_BEHIND="%F{yellow}"
 export GIT_RADAR_COLOR_LOCAL_DIVERGED="%F{yellow}"
+export GIT_RADAR_COLOR_REMOTE_AHEAD="%F{yellow}"
+export GIT_RADAR_COLOR_REMOTE_BEHIND="%F{yellow}"
+export GIT_RADAR_COLOR_REMOTE_DIVERGED="%F{yellow}"
 source ~/.zsh/prompts/slimline/slimline.zsh
 
 # enable colored output from ls, etc
