@@ -89,3 +89,5 @@
   tool = Kaleidoscope
 [pager]
   status = true
+[rebase]
+  autosquash = true
