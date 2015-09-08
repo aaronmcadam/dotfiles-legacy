@@ -10,16 +10,18 @@ autoload -U compinit
 compinit
 
 # load our own completion functions
-fpath=(~/.zsh/completion ~/.zsh/prompts $fpath)
+fpath=(~/.zsh/completion $fpath)
 autoload -Uz ~/.zsh/completion/*(:t)
-
-autoload -U promptinit && promptinit
-prompt pure
 
 # load custom executable functions
 for function in ~/.zsh/functions/*; do
   source $function
 done
+
+export GIT_RADAR_COLOR_LOCAL_AHEAD="%F{yellow}"
+export GIT_RADAR_COLOR_LOCAL_BEHIND="%F{yellow}"
+export GIT_RADAR_COLOR_LOCAL_DIVERGED="%F{yellow}"
+source ~/.zsh/prompts/slimline/slimline.zsh
 
 # enable colored output from ls, etc
 export CLICOLOR=1
