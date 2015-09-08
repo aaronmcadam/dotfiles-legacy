@@ -9,10 +9,6 @@ AllCops:
     - bin/**
     - config/**/*
     - script/**
-# Follow the Jim Weirich school of thought on usage of do/end vs. {...}:
-# http://devblog.avdi.org/2011/07/26/the-procedurefunction-block-convention-in-ruby/
-Blocks:
-  Enabled: false
 CollectionMethods:
   PreferredMethods:
     map: "collect"
@@ -31,5 +27,9 @@ StringLiterals:
   EnforcedStyle: double_quotes
 TrailingBlankLines:
   EnforcedStyle: final_newline
+# Follow the Jim Weirich school of thought on usage of do/end vs. {...}:
+# http://devblog.avdi.org/2011/07/26/the-procedurefunction-block-convention-in-ruby/
+Style/BlockDelimiters:
+  EnforcedStyle: semantic
 Style/MultilineOperationIndentation:
   EnforcedStyle: indented
