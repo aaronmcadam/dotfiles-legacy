@@ -57,3 +57,5 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 autoload edit-command-line
 zle -N edit-command-line
 bindkey '^Xe' edit-command-line
+
+eval "$(direnv hook zsh)"

@@ -317,19 +317,4 @@ function! Capitalize(string)
   return substitute(a:string, "^\\w", "\\u\\0", "")
 endfunction
 
-function! Spatch()
-  let sessions = system("tmux list-sessions -F '#{session_name}'")
-
-  let target = input('Enter target: ')
-  let target_session = matchstr(target, '[[:alnum:]_-]\+')
-
-  if (sessions =~ target_session) && (target_session != '')
-    let g:spec_runner_dispatcher = "call system(\"tmux send -t "
-          \                        . target .
-          \                        " C-L '{command}' ENTER\")"
-  else
-    let g:spec_runner_dispatcher = "VtrSendCommand! {command}"
-  endif
-endfunction
-
-nnoremap <expr> <Leader>x Spatch()
+nnoremap <Leader>cl :s/,/,\r/g<CR>

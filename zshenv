@@ -14,3 +14,5 @@ fi
 
 # mkdir -p .git/safe in the root of repositories you trust
 export PATH=".git/safe/../../bin:${PATH}"
+
+export PATH=/usr/texbin:"$PATH"

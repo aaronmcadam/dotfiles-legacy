@@ -36,6 +36,7 @@ alias la='ls -lAh'
 
 # git
 alias h="hub"
+alias hb="h browse"
 alias hc="h clone"
 alias hcp="h clone -p"
 # create private repo named after current directory
