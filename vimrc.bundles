@@ -9,6 +9,7 @@ Plug 'atelierbram/vim-colors_atelier-schemes'
 
 " General enhancements
 Plug 'JazzCore/ctrlp-cmatcher'
+Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-user'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'rking/ag.vim', { 'on': 'Ag' }
