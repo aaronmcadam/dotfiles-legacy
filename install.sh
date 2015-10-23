@@ -21,6 +21,7 @@ brew install htop
 brew install imagemagick
 brew install mobile-shell
 brew install node
+brew install ncdu
 brew install nginx
 brew install phantomjs
 brew install pkg-config
