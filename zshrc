@@ -35,13 +35,8 @@ HISTFILE=~/.zhistory
 HISTSIZE=4096
 SAVEHIST=4096
 
-# use vim as the visual editor
-# but still use emacs-style ZSH bindings
-# to allow things like reverse-search (Ctrl-R) to work
-# source: http://superuser.com/a/457401/147601
 export VISUAL=vim
 export EDITOR=$VISUAL
-bindkey -e
 
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
@@ -54,8 +49,6 @@ export RUBY_GC_HEAP_GROWTH_MAX_SLOTS=300000
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
-autoload edit-command-line
-zle -N edit-command-line
-bindkey '^Xe' edit-command-line
-
 eval "$(direnv hook zsh)"
+
+bindkey -v
