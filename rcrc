@@ -1,2 +1,2 @@
-EXCLUDES="README.md LICENSE install_brews_and_casks.sh"
+EXCLUDES="README.md install.sh etc"
 DOTFILES_DIRS="$HOME/dotfiles"
