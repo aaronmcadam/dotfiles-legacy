@@ -62,7 +62,6 @@ autocmd VimResized * :wincmd =
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
 command! W :w
-nnoremap ; :
 nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
@@ -120,6 +119,7 @@ nmap <Leader>to :tabonly<cr>
 nmap <Leader>tp :tabprevious<cr>
 " reselect the text that was just pasted
 nnoremap <Leader>v V`]
+nnoremap <Leader>w :w<CR>
 
 augroup vimrcEx
   autocmd!
