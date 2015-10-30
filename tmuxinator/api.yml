@@ -1,8 +1,0 @@
-name: api
-root: ~/Workspace/work/api-rails
-windows:
-  - gem:
-      layout: 626c,212x50,0,0{155x50,0,0,0,56x50,156,0,3}
-      panes:
-        - v.
-  - scratch:
