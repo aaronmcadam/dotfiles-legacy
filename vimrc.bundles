@@ -5,7 +5,7 @@ end
 call plug#begin('~/.vim/bundle')
 
 " Themes
-Plug 'atelierbram/vim-colors_atelier-schemes'
+Plug 'mhartington/oceanic-next'
 
 " General enhancements
 Plug 'JazzCore/ctrlp-cmatcher'

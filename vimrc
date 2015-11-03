@@ -13,9 +13,8 @@ syntax enable
 filetype plugin indent on
 
 " Color scheme
-set t_Co=256
 set background=dark
-colorscheme base16-ateliersulphurpool
+colorscheme OceanicNext
 
 set autowrite     " Automatically :write before running commands
 set autoread      " Reload files changed outside vim
