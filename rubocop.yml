@@ -2,34 +2,43 @@
 # https://github.com/bbatsov/rubocop/blob/master/config/default.yml
 # Find enabled settings here:
 # https://github.com/bbatsov/rubocop/blob/master/config/enabled.yml
-# We also prefer `or` and `and` for control flow:
-# http://devblog.avdi.org/2014/08/26/how-to-use-rubys-english-andor-operators-without-going-nuts/
 AllCops:
+  Include:
+    - '**/Rakefile'
+    - '**/config.ru'
   Exclude:
-    - bin/**
-    - config/**/*
-    - script/**
-CollectionMethods:
+    - '.bundle/**/*'
+    - 'bin/**/*'
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+  RunRailsCops: true
+Style/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
+Style/AndOr:
+  EnforcedStyle: conditionals
+Style/BlockDelimiters:
+  EnforcedStyle: semantic
+Style/CollectionMethods:
   PreferredMethods:
     map: "collect"
     find: "detect"
     find_all: "select"
     reduce: "inject"
-Documentation:
+Style/Documentation:
   Enabled: false
-EachWithObject:
+Style/EachWithObject:
   Enabled: false
-Lambda:
+Style/Lambda:
   Enabled: false
-RegexpLiteral:
-  MaxSlashes: 0
-StringLiterals:
+Style/RegexpLiteral:
+  EnforcedStyle: mixed
+  AllowInnerSlashes: false
+Style/StringLiterals:
   EnforcedStyle: double_quotes
-TrailingBlankLines:
+Style/TrailingBlankLines:
   EnforcedStyle: final_newline
-# Follow the Jim Weirich school of thought on usage of do/end vs. {...}:
-# http://devblog.avdi.org/2011/07/26/the-procedurefunction-block-convention-in-ruby/
-Style/BlockDelimiters:
-  EnforcedStyle: semantic
 Style/MultilineOperationIndentation:
   EnforcedStyle: indented
+Rails/ReadWriteAttribute:
+  Enabled: false
