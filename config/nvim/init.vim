@@ -15,3 +15,6 @@ colorscheme OceanicNext
 set background=dark
 set cursorline cursorcolumn
 set colorcolumn=80
+
+" vim-test
+let test#strategy = "neovim"
