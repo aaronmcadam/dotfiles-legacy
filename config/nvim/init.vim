@@ -2,8 +2,11 @@ if filereadable(expand("~/.config/nvim/plugins.vim"))
   source ~/.config/nvim/plugins.vim
 endif
 
+" Numbers
 set number
 set relativenumber
+" Set relativenumber for netrw buffers
+let g:netrw_bufsettings = "noma nomod nu nobl nowrap ro"
 
 " Theme
 syntax enable
