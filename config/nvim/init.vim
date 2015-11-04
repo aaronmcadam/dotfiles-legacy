@@ -18,3 +18,6 @@ set colorcolumn=80
 
 " vim-test
 let test#strategy = "neovim"
+
+" neomake
+autocmd! BufWritePost * Neomake

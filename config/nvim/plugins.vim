@@ -3,11 +3,12 @@ call plug#begin('~/.nvim/plugins')
 " Themes
 Plug 'mhartington/oceanic-next'
 
+Plug 'benekastah/neomake'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'janko-m/vim-test'
 Plug 'jgdavey/vim-blockle'
 Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-user'
-Plug 'janko-m/vim-test'
 Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
