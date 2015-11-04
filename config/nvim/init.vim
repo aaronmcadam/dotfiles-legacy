@@ -8,6 +8,19 @@ set relativenumber
 " Set relativenumber for netrw buffers
 let g:netrw_bufsettings = "noma nomod nu nobl nowrap ro"
 
+" Tabs and spaces
+" Use spaces instead of tabs
+set expandtab
+" Manually control tab widths
+set nosmarttab
+set tabstop=2
+" number of spaces to use for autoindenting
+set shiftwidth=2
+" use multiple of shiftwidth when indenting with '<' and '>'
+set shiftround
+" strip trailing whitespace on save
+autocmd BufWritePre * :%s/\s\+$//e
+
 " Theme
 syntax enable
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
@@ -17,7 +30,7 @@ set cursorline cursorcolumn
 set colorcolumn=80
 
 " vim-test
-let test#strategy = "neovim"
+let test#strategy = "dispatch"
 
 " neomake
 autocmd! BufWritePost * Neomake
