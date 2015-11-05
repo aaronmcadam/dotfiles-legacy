@@ -112,9 +112,8 @@ alias grfn="g rf -n" # finish release without tagging (for gem projects)
 alias l="k"
 
 # apps
-alias v="vim"
-alias v.="vim ."
-alias v/="vim ~/.zshrc"
+alias v="nvim"
+alias v.="nvim ."
 alias tk="tmux kill-server"
 
 # projects

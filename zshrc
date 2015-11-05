@@ -35,7 +35,7 @@ HISTFILE=~/.zhistory
 HISTSIZE=4096
 SAVEHIST=4096
 
-export VISUAL=vim
+export VISUAL=nvim
 export EDITOR=$VISUAL
 
 # aliases
