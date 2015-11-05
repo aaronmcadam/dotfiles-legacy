@@ -27,15 +27,7 @@ set shiftwidth=2
 " use multiple of shiftwidth when indenting with '<' and '>'
 set shiftround
 " strip trailing whitespace on save
-autocmd BufWritePre * :%s/\s\+$//e
-
-" Theme
-syntax enable
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-colorscheme OceanicNext
-set background=dark
-set cursorline cursorcolumn
-set colorcolumn=80
+autocmd BufWritePre *.rb,*.js,*.coffee,*.css,*.scss :%s/\s\+$//e
 
 " Leader
 let mapleader = " "
