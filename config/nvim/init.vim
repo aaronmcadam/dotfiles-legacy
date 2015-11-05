@@ -43,7 +43,7 @@ nmap <Leader><space> :noh<cr>
 " Fugitive
 nnoremap <Leader>gd :Gdiff<CR>
 nnoremap <Leader>gc :Gcommit -v<CR>
-nnoremap <Leader>gp :Git push<CR>
+nnoremap <Leader>gp :Gpush<CR>
 nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gr :Gread<CR>
 nnoremap <Leader>gw :Gwrite<CR>
