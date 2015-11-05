@@ -40,8 +40,13 @@ nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gr :Gread<CR>
 nnoremap <Leader>gw :Gwrite<CR>
 
-" vim-test
-let test#strategy = "dispatch"
-
 " neomake
 autocmd! BufWritePost * Neomake
+
+" vim-test
+let test#strategy = "dispatch"
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>T :TestFile<CR>
+nmap <silent> <leader>a :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
