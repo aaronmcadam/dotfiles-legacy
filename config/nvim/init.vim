@@ -29,6 +29,10 @@ set background=dark
 set cursorline cursorcolumn
 set colorcolumn=80
 
+" Leader
+let mapleader = " "
+nmap <Leader><space> :noh<cr>
+
 " vim-test
 let test#strategy = "dispatch"
 
