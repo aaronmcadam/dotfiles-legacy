@@ -29,6 +29,8 @@ Style/Documentation:
   Enabled: false
 Style/EachWithObject:
   Enabled: false
+Style/IfUnlessModifier:
+  Enabled: false
 Style/Lambda:
   Enabled: false
 Style/RegexpLiteral:
