@@ -85,8 +85,23 @@ nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gr :Gread<CR>
 nnoremap <Leader>gw :Gwrite<CR>
 
+" vim-jsx
+let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+
 " neomake
 autocmd! BufWritePost * Neomake
+let g:neomake_javascript_jscs_maker = {
+  \ 'exe': 'jscs',
+  \ 'args': ['--no-color', '--preset', 'airbnb', '--reporter', 'inline', '--esnext'],
+  \ 'errorformat': '%f: line %l\, col %c\, %m',
+  \ }
+let g:neomake_jsx_jscs_maker = {
+  \ 'exe': 'jscs',
+  \ 'args': ['--no-color', '--preset', 'airbnb', '--reporter', 'inline', '--esnext'],
+  \ 'errorformat': '%f: line %l\, col %c\, %m',
+  \ }
+let g:neomake_javascript_enabled_makers = ['jscs']
+let g:neomake_jsx_enabled_makers = ['jscs']
 
 " vim-test
 let test#strategy = "dispatch"
