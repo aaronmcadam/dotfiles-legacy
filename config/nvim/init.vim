@@ -34,6 +34,40 @@ set shiftround
 " strip trailing whitespace on save
 autocmd BufWritePre *.rb,*.js,*.coffee,*.css,*.scss :%s/\s\+$//e
 
+" Splits
+" Open new split panes to right and bottom, which feels more natural
+set splitbelow
+set splitright
+
+" Swap file
+set noswapfile
+
+" Add git branch to statusline
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+
+" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
+if executable('ag')
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --hidden --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+
+  " Allow opening multiple splits with same file via CtrlP
+  let g:ctrlp_switch_buffer = 0
+endif
+
+" Bindings
+" Disable arrow keys
+nnoremap <Left> :echoe "Use h"<CR>
+nnoremap <Right> :echoe "Use l"<CR>
+nnoremap <Up> :echoe "Use k"<CR>
+nnoremap <Down> :echoe "Use j"<CR>
+" bind K to grep word under cursor
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 " Leader
 let mapleader = " "
 nmap <Leader><space> :noh<cr>
