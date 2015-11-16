@@ -16,6 +16,11 @@ set relativenumber
 " Set relativenumber for netrw buffers
 let g:netrw_bufsettings = "noma nomod nu nobl nowrap ro"
 
+" Command-Line mode
+set history=200
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
+
 " Tabs and spaces
 " Use spaces instead of tabs
 set expandtab
