@@ -175,3 +175,6 @@ alias rcra="rc -Ra"
 alias rcupk="rcup -K" # skip pre and post hooks
 alias rbp="rails_best_practices -f html --with-mvim ."
 alias fs="foreman start"
+
+# Include private aliases
+[[ -f ~/.aliases.local ]] && source ~/.aliases.local
