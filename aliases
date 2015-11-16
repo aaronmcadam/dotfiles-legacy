@@ -4,10 +4,10 @@ alias rv="ruby -v"
 alias cask="brew cask"
 
 # corrections
-alias man='nocorrect man'
-alias mv='nocorrect mv'
-alias mkdir='nocorrect mkdir'
-alias sudo='nocorrect sudo'
+alias man="nocorrect man"
+alias mv="nocorrect mv"
+alias mkdir="nocorrect mkdir"
+alias sudo="nocorrect sudo"
 alias mux="nocorrect mux"
 
 if [[ "$ENABLE_CORRECTION" == "true" ]]; then
@@ -26,13 +26,13 @@ alias c="clear"
 alias mkdir="mkdir -p"
 
 # directories
-alias ..='cd ../'
-alias ...='cd ../../'
-alias ....='cd ../../../'
-alias .....='cd ../../../../'
-alias lsa='ls -lah'
-alias ll='ls -lh'
-alias la='ls -lAh'
+alias ..="cd ../"
+alias ...="cd ../../"
+alias ....="cd ../../../"
+alias .....="cd ../../../../"
+alias lsa="ls -lah"
+alias ll="ls -lh"
+alias la="ls -lAh"
 
 # git
 alias h="hub"
@@ -40,37 +40,37 @@ alias hb="h browse"
 alias hc="h clone"
 alias hcp="h clone -p"
 # create private repo named after current directory
-alias create_crowdlab_repo='h create -p crowdlab-uk/$(basename `pwd`)'
+alias create_crowdlab_repo="h create -p crowdlab-uk/$(basename `pwd`)"
 alias prq="git push -u && h pull-request"
 alias prqd="prq -b crowdlab-uk:develop"
 alias prqm="prq -b crowdlab-uk:master"
 
-alias g='git'
+alias g="git"
 compdef g=git
-alias gst='g status'
+alias gst="g status"
 alias gcb="g create-branch"
 alias gdb="g delete-branch"
-alias gd='g d'
+alias gd="g d"
 compdef _git gd=git-diff
-alias gdc='g diff --cached'
+alias gdc="g diff --cached"
 compdef _git gdc=git-diff
-alias gl='g pull'
-alias gup='g pull --rebase'
-alias gp='g push'
-alias gd='g diff'
-alias gco='g co'
-alias gcm='g co master'
+alias gl="g pull"
+alias gup="g pull --rebase"
+alias gp="g push"
+alias gd="g diff"
+alias gco="g co"
+alias gcm="g co master"
 alias gcd="g co develop"
 alias grb="g rebase -i"
-alias grbc='g rebase --continue'
-alias grba='g rebase --abort'
+alias grbc="g rebase --continue"
+alias grba="g rebase --abort"
 alias grbl="grb HEAD~2" # git rebase last
 alias grbd="grb develop"
-alias gb='g br'
-alias gba='g br -a'
-alias ga='g add'
+alias gb="g br"
+alias gba="g br -a"
+alias ga="g add"
 alias gaa="g aa" # Stages All changes (new, modified AND deleted)
-alias gm='g m'
+alias gm="g m"
 alias gci="g ci"
 alias gcim="g ci -am"
 alias gcia="g ci --amend"
@@ -93,9 +93,9 @@ alias gpf="gp -f"
 alias gpm="gp origin master --tags"
 alias gpd="gp origin develop --tags"
 alias gpb="gp origin master develop --tags"
-alias grh='git reset HEAD'
-alias grhh='git reset HEAD --hard'
-alias gls='git ls' # List files in repo
+alias grh="git reset HEAD"
+alias grhh="git reset HEAD --hard"
+alias gls="git ls" # List files in repo
 
 # Git-Flow
 alias gfl="g fl" # flow
