@@ -71,6 +71,12 @@ nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 " Leader
 let mapleader = " "
 nmap <Leader><space> :noh<cr>
+nnoremap <Leader>q :qa!<CR>
+
+" Tabs
+nmap <Leader>tn :tabnext<cr>
+nmap <Leader>tp :tabprevious<cr>
+
 " Fugitive
 nnoremap <Leader>gd :Gdiff<CR>
 nnoremap <Leader>gc :Gcommit -v<CR>
