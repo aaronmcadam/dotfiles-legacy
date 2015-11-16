@@ -114,6 +114,9 @@ alias l="k"
 # apps
 alias v="nvim"
 alias v.="nvim ."
+alias vc="nvim ~/dotfiles/config/nvim/init.vim"
+alias vp="nvim ~/dotfiles/config/nvim/plugins.vim"
+alias vip="nvim +PlugInstall"
 alias tk="tmux kill-server"
 
 # projects
