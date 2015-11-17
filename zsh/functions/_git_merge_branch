@@ -1,0 +1,4 @@
+_git_merge_branch ()
+{
+  __gitcomp "$(__git_heads)"
+}
