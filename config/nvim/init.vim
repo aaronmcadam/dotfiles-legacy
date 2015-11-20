@@ -21,6 +21,9 @@ set history=200
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 
+" Disable mouse click to go to position
+set mouse-=a
+
 " Tabs and spaces
 " Use spaces instead of tabs
 set expandtab
