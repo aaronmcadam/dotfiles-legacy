@@ -75,6 +75,8 @@ nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 let mapleader = " "
 nmap <Leader><space> :noh<cr>
 nnoremap <Leader>q :qa!<CR>
+" reselect the text that was just pasted
+nnoremap <Leader>v V`]
 
 " Tabs
 nmap <Leader>tn :tabnext<cr>
