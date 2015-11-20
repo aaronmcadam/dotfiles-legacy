@@ -18,6 +18,7 @@ Plug 'othree/yajs.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'radenling/vim-dispatch-neovim'
 Plug 'rking/ag.vim', { 'on': 'Ag' }
+Plug 'skwp/greplace.vim', { 'on': 'Gsearch' }
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-commentary'
