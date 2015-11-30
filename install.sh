@@ -23,7 +23,6 @@ brew install mobile-shell
 brew install node
 brew install ncdu
 brew install nginx
-brew install phantomjs
 brew install pkg-config
 brew install postgresql
 brew install redis
