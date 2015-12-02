@@ -108,6 +108,9 @@ let g:neomake_jsx_jscs_maker = {
 let g:neomake_javascript_enabled_makers = ['jscs']
 let g:neomake_jsx_enabled_makers = ['jscs']
 
+" Testing
+nnoremap <Leader>bp orequire "pry"; binding.pry<esc>^
+nnoremap <Leader>so osave_and_open_page<esc>^
 " vim-test
 let test#strategy = "dispatch"
 nmap <silent> <leader>t :TestFile<CR>
@@ -115,3 +118,5 @@ nmap <silent> <leader>s :TestNearest<CR>
 nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>g :TestVisit<CR>
+
+let test#runners = {'JavaScript': ['Teaspoon']}
