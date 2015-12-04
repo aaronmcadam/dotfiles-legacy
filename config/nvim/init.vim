@@ -17,7 +17,6 @@ set relativenumber
 let g:netrw_bufsettings = "noma nomod nu nobl nowrap ro"
 
 " Command-Line mode
-set history=200
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 
@@ -118,5 +117,4 @@ nmap <silent> <leader>s :TestNearest<CR>
 nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>g :TestVisit<CR>
-
 let test#runners = {'JavaScript': ['Teaspoon']}
