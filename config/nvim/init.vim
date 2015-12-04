@@ -118,3 +118,12 @@ nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>g :TestVisit<CR>
 let test#runners = {'JavaScript': ['Teaspoon']}
+
+autocmd BufRead,BufNewFile *.md set filetype=markdown
+" Spell-check Markdown files
+autocmd FileType markdown setlocal spell
+" Spell-check Git messages
+autocmd FileType gitcommit setlocal spell
+set spellfile=$HOME/.config/nvim/vim-spell-en.utf-8.add
+" Autocomplete with dictionary words when spell check is on
+set complete+=kspell
