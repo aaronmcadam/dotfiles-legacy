@@ -93,6 +93,11 @@ nnoremap <Leader>gw :Gwrite<CR>
 " fzf.vim
 let g:fzf_nvim_statusline = 0 " disable statusline overwriting
 
+let g:fzf_action = {
+      \ 'ctrl-s': 'split',
+      \ 'ctrl-v': 'vsplit'
+      \ }
+nnoremap <c-p> :Files<CR>
 nnoremap <silent> <leader><space> :Files<CR>
 nnoremap <silent> <leader>a :Buffers<CR>
 nnoremap <silent> <leader>; :BLines<CR>
