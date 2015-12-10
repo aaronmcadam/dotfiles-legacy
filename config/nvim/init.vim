@@ -19,6 +19,9 @@ let g:netrw_bufsettings = "noma nomod nu nobl nowrap ro"
 " Command-Line mode
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
+set hidden
+set history=1000
+set undolevels=1000 
 
 " Disable mouse click to go to position
 set mouse-=a
@@ -68,11 +71,9 @@ nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
-" bind K to grep word under cursor
-nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 " Leader
 let mapleader = " "
-nmap <Leader><space> :noh<cr>
+nmap <Leader><h> :noh<cr>
 nnoremap <Leader>q :qa!<CR>
 " reselect the text that was just pasted
 nnoremap <Leader>v V`]
@@ -88,6 +89,41 @@ nnoremap <Leader>gp :Gpush<CR>
 nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gr :Gread<CR>
 nnoremap <Leader>gw :Gwrite<CR>
+
+" fzf.vim
+let g:fzf_nvim_statusline = 0 " disable statusline overwriting
+
+nnoremap <silent> <leader><space> :Files<CR>
+nnoremap <silent> <leader>a :Buffers<CR>
+nnoremap <silent> <leader>; :BLines<CR>
+nnoremap <silent> <leader>. :Lines<CR>
+nnoremap <silent> <leader>o :BTags<CR>
+nnoremap <silent> <leader>O :Tags<CR>
+nnoremap <silent> <leader>? :History<CR>
+nnoremap <silent> <leader>/ :execute 'Ag ' . input('Ag/')<CR>
+nnoremap <silent> K :call SearchWordWithAg()<CR>
+vnoremap <silent> K :call SearchVisualSelectionWithAg()<CR>
+nnoremap <silent> <leader>gl :Commits<CR>
+nnoremap <silent> <leader>ga :BCommits<CR>
+
+imap <C-x><C-f> <plug>(fzf-complete-file-ag)
+imap <C-x><C-l> <plug>(fzf-complete-line)
+
+function! SearchWordWithAg()
+  execute 'Ag' expand('<cword>')
+endfunction
+
+function! SearchVisualSelectionWithAg() range
+  let old_reg = getreg('"')
+  let old_regtype = getregtype('"')
+  let old_clipboard = &clipboard
+  set clipboard&
+  normal! ""gvy
+  let selection = getreg('"')
+  call setreg('"', old_reg, old_regtype)
+  let &clipboard = old_clipboard
+  execute 'Ag' selection
+endfunction
 
 " vim-jsx
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
@@ -120,6 +156,7 @@ nmap <silent> <leader>g :TestVisit<CR>
 let test#runners = {'JavaScript': ['Teaspoon']}
 
 autocmd BufRead,BufNewFile *.md set filetype=markdown
+autocmd BufRead,BufNewFile *.md setlocal textwidth=80
 " Spell-check Markdown files
 autocmd FileType markdown setlocal spell
 " Spell-check Git messages
