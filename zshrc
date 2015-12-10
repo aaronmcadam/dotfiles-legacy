@@ -52,3 +52,6 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 eval "$(direnv hook zsh)"
 
 bindkey -v
+
+export FZF_DEFAULT_COMMAND='ag -l -g "" --hidden --skip-vcs-ignores'
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
