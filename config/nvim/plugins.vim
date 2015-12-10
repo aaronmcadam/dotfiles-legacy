@@ -5,7 +5,8 @@ Plug 'mhartington/oceanic-next'
 
 Plug 'airblade/vim-gitgutter'
 Plug 'benekastah/neomake'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'int3/vim-extradite'
 Plug 'janko-m/vim-test'
 Plug 'jgdavey/vim-blockle'
@@ -18,7 +19,6 @@ Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'othree/yajs.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'radenling/vim-dispatch-neovim'
-Plug 'rking/ag.vim', { 'on': 'Ag' }
 Plug 'skwp/greplace.vim', { 'on': 'Gsearch' }
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-bundler'
