@@ -87,6 +87,7 @@
 [mergetool]
   prompt = false
 [merge]
+  ff = only
   tool = Kaleidoscope
 [pager]
   status = true
