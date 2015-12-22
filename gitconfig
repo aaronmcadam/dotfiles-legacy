@@ -25,6 +25,7 @@
   delete-branch = !sh -c 'git push origin :refs/heads/$1 && git branch -D $1' -
   dt = difftool
   dtc = difftool --cached
+  dup = !git checkout develop && git pull && git checkout -
   f = flow feature
   ff = flow feature finish
   fl = flow
@@ -32,6 +33,7 @@
   issues = !hub browse -- issues
   ls = ls-tree --full-tree -r HEAD # List files in repo
   m = merge
+  mup = !git checkout master && git pull && git checkout -
   pr = !git push -u && gh pull-request
   r = flow release
   rename-branch = !sh -c 'old=$(git current-branch) && git branch -m $old $1 && git push origin --set-upstream $1 && git push origin --delete $old' -
