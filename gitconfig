@@ -29,6 +29,7 @@
   ff = flow feature finish
   fl = flow
   fs = flow feature start
+  issues = !hub browse -- issues
   ls = ls-tree --full-tree -r HEAD # List files in repo
   m = merge
   pr = !git push -u && gh pull-request
