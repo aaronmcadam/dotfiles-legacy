@@ -1,0 +1,3 @@
+# Open Vim with the Conflicted plugin active
+# https://github.com/christoomey/vim-conflicted
+function conflicted { nvim +Conflicted }

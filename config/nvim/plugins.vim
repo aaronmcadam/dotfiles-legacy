@@ -5,6 +5,7 @@ Plug 'mhartington/oceanic-next'
 
 Plug 'airblade/vim-gitgutter'
 Plug 'benekastah/neomake'
+Plug 'christoomey/vim-conflicted'
 Plug 'int3/vim-extradite'
 Plug 'janko-m/vim-test'
 Plug 'jgdavey/vim-blockle'
