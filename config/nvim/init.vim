@@ -73,7 +73,7 @@ nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 " Leader
 let mapleader = " "
-nmap <Leader><h> :noh<cr>
+nmap <Leader><space> :noh<cr>
 nnoremap <Leader>q :qa!<CR>
 " reselect the text that was just pasted
 nnoremap <Leader>v V`]
@@ -98,7 +98,6 @@ let g:fzf_action = {
       \ 'ctrl-v': 'vsplit'
       \ }
 nnoremap <c-p> :Files<CR>
-nnoremap <silent> <leader><space> :Files<CR>
 nnoremap <silent> <leader>a :Buffers<CR>
 nnoremap <silent> <leader>; :BLines<CR>
 nnoremap <silent> <leader>. :Lines<CR>
