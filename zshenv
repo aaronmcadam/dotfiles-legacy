@@ -6,11 +6,9 @@ ssh-add 2>/dev/null
 # dotfiles | homebrew | system path
 export PATH="$HOME/.bin:/usr/local/bin:$PATH"
 
-export RBENV_ROOT="${HOME}/.rbenv"
-if [ -d "${RBENV_ROOT}" ]; then
-  export PATH="${RBENV_ROOT}/bin:${PATH}"
-  eval "$(rbenv init - zsh --no-rehash)"
-fi
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+chruby 2.3.0
+source /usr/local/opt/chruby/share/chruby/auto.sh
 
 # mkdir -p .git/safe in the root of repositories you trust
 export PATH=".git/safe/../../bin:${PATH}"

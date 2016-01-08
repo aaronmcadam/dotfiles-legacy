@@ -10,6 +10,7 @@ brew install ag
 brew tap Goles/battery
 brew install battery
 brew install chrome-cli
+brew install chruby
 brew install cmake
 brew install ctags
 brew install dnsmasq
@@ -27,13 +28,9 @@ brew install pkg-config
 brew install postgresql
 brew install redis
 brew install reattach-to-user-namespace
-brew install rbenv
-brew install rbenv-ctags
-brew install rbenv-default-gems
-brew install rbenv-gem-rehash
 brew install rcm
 brew install rename
-brew install ruby-build
+brew install ruby-install
 brew install tmux
 brew install tree
 brew install vim
