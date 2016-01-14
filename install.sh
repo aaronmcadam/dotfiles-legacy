@@ -56,6 +56,7 @@ brew cask install jumpcut
 brew cask install launchrocket
 brew cask install licecap
 brew cask install menumeters
+brew cask install paw
 brew cask install rubymine
 brew cask install sizeup
 brew cask install slack
