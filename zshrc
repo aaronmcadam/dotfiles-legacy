@@ -53,5 +53,5 @@ eval "$(direnv hook zsh)"
 
 bindkey -v
 
-export FZF_DEFAULT_COMMAND='ag -l -g "" --hidden --skip-vcs-ignores'
+export FZF_DEFAULT_COMMAND='ag -l -g "" --hidden'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
