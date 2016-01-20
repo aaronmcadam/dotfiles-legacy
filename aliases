@@ -55,6 +55,7 @@ compdef _git gd=git-diff
 alias gdc="g diff --cached"
 compdef _git gdc=git-diff
 alias gl="g pull"
+alias gsl="echo 'use gup'"
 alias gup="g pull --rebase"
 alias gp="g push"
 alias gd="g diff"

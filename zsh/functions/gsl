@@ -1,4 +1,0 @@
-function gsl() {
-  current_branch=`git rev-parse --abbrev-ref HEAD`
-  git fetch origin && git rebase origin/${current_branch}
-}
