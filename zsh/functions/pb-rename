@@ -1,0 +1,3 @@
+pb-rename() {
+   pin-cushion tags/rename --old "$1" --new "$2"
+}

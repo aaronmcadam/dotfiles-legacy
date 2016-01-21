@@ -40,6 +40,14 @@ brew install zsh
 brew install zsh-completions
 
 echo "================"
+echo "INSTALLING NPM MODULES"
+echo "================"
+echo "installing pin-cushion (for accessing Pinboard)"
+npm install -g pin-cushion
+pin-cushion --auth "$PINBOARD_API_TOKEN"
+echo "pin-cushion installed"
+
+echo "================"
 echo "INSTALLING CASKS"
 echo "================"
 
