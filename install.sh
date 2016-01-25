@@ -82,4 +82,5 @@ brew cask cleanup
 
 echo "Don't forget to add /opt/homebrew-cask/Caskroom to the Alfred search scope preferences"
 
+echo "Enabling submodule for slimline..."
 git submodule update --init --recursive
