@@ -124,7 +124,7 @@ alias tk="tmux kill-server"
 alias sc="v /usr/local/etc/nginx/sites-enabled"
 alias capt="cap -T"
 alias capd="cap qa deploy"
-alias cappd="cap production deploy"
+alias cappd="echo 'use ansible'"
 
 # development
 alias rs="rails s"
