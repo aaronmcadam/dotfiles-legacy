@@ -6,9 +6,9 @@ chruby 2.2.2
 
 # Make sure homebrew installed apps take precedence over system apps
 # Order path in the following order:
-# homebrew | dotfiles | system path
+# dotfiles -> homebrew -> system path
+export PATH="$HOME/.bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
-export PATH="$HOME/bin:$PATH"
 # mkdir -p .git/safe in the root of repositories you trust
 export PATH=".git/safe/../../bin:${PATH}"
 export PATH=/usr/texbin:"$PATH"
