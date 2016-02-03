@@ -26,6 +26,8 @@ brew install ncdu
 brew install nginx
 brew install pkg-config
 brew install postgresql
+brew install qt5
+brew link --force qt5
 brew install redis
 brew install reattach-to-user-namespace
 brew install rcm
