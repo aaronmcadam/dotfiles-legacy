@@ -13,6 +13,7 @@ brew install chrome-cli
 brew install chruby
 brew install cmake
 brew install ctags
+brew install direnv
 brew install dnsmasq
 brew install hub
 brew install git
