@@ -41,12 +41,6 @@ export EDITOR=$VISUAL
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 
-# ruby GC performance
-export RUBY_GC_HEAP_INIT_SLOTS=600000
-export RUBY_GC_HEAP_FREE_SLOTS=600000
-export RUBY_GC_HEAP_GROWTH_FACTOR=1.25
-export RUBY_GC_HEAP_GROWTH_MAX_SLOTS=300000
-
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 eval "$(direnv hook zsh)"
