@@ -43,7 +43,7 @@
   sta = stash
   staged = diff --cached
   track = update-index --no-assume-unchanged
-  trust = !mkdir .git/safe
+  trust = !mkdir -p .git/safe
   untrack = update-index --assume-unchanged
   forget = !git untrack
   ls-untracked = !sh -c 'git ls-files -v | grep "^[[:lower:]]"'
