@@ -13,6 +13,7 @@ export PATH="$HOME/.bin:$PATH"
 
 # Remove the need for bundle exec ... or ./bin/...
 # by adding ./bin to path if the current project is trusted
+# Source: http://dance.computer.dance/posts/2015/02/making-chruby-and-binstubs-play-nice.html
 
 function set_local_bin_path() {
   # Replace any existing local bin paths with our new one
