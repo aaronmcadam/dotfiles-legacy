@@ -129,6 +129,9 @@ function! SearchVisualSelectionWithAg() range
   execute 'Ag' selection
 endfunction
 
+" emmet: use single quotes for HTML attributes 
+let g:user_emmet_settings = {'html':{'quote_char': "'",},}
+
 " vim-jsx
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
