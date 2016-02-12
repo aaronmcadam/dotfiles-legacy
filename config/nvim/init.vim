@@ -168,3 +168,5 @@ autocmd FileType gitcommit setlocal spell
 set spellfile=$HOME/.config/nvim/vim-spell-en.utf-8.add
 " Autocomplete with dictionary words when spell check is on
 set complete+=kspell
+
+nmap - :Explore<CR>
