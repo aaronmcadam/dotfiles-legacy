@@ -45,6 +45,8 @@ brew install zsh-completions
 echo "================"
 echo "INSTALLING NPM MODULES"
 echo "================"
+echo "installing pure-prompt"
+npm install -g pure-prompt
 echo "installing pin-cushion (for accessing Pinboard)"
 npm install -g pin-cushion
 pin-cushion --auth "$PINBOARD_API_TOKEN"

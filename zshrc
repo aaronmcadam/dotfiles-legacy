@@ -1,5 +1,3 @@
-# autoload -U colors && colors
-
 # cd movements from zshkit
 setopt autocd autopushd pushdminus pushdsilent pushdtohome cdablevars
 DIRSTACKSIZE=5
@@ -9,6 +7,10 @@ cdpath=($HOME/workspace/work/apps $HOME/workspace/work/gems $HOME)
 autoload -U compinit
 compinit
 
+# prompt
+autoload -U promptinit && promptinit
+prompt pure
+
 # load our own completion functions
 fpath=(~/.zsh/completion $fpath)
 autoload -Uz ~/.zsh/completion/*(:t)
@@ -17,14 +19,6 @@ autoload -Uz ~/.zsh/completion/*(:t)
 for function in ~/.zsh/functions/*; do
   source $function
 done
-
-export GIT_RADAR_COLOR_LOCAL_AHEAD="%F{yellow}"
-export GIT_RADAR_COLOR_LOCAL_BEHIND="%F{yellow}"
-export GIT_RADAR_COLOR_LOCAL_DIVERGED="%F{yellow}"
-export GIT_RADAR_COLOR_REMOTE_AHEAD="%F{yellow}"
-export GIT_RADAR_COLOR_REMOTE_BEHIND="%F{yellow}"
-export GIT_RADAR_COLOR_REMOTE_DIVERGED="%F{yellow}"
-source ~/.zsh/prompts/slimline/slimline.zsh
 
 # enable colored output from ls, etc
 export CLICOLOR=1
