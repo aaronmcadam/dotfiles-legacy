@@ -65,7 +65,6 @@ brew cask install iterm2
 brew cask install flycut
 brew cask install launchrocket
 brew cask install licecap
-brew cask install menumeters
 brew cask install paw
 brew cask install rubymine
 brew cask install sizeup
@@ -75,6 +74,8 @@ brew cask install skype
 brew cask install spotify
 brew cask install virtualbox
 brew cask install vlc
+# El Capitan-compatible fork of menumeters:
+brew cask install yujitach-menumeters
 
 echo "==========="
 echo "CLEANING UP"
