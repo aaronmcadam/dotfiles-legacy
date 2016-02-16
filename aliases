@@ -40,7 +40,7 @@ alias hb="h browse"
 alias hc="h clone"
 alias hcp="h clone -p"
 # create private repo named after current directory
-alias create_crowdlab_repo="h create -p crowdlab-uk/$(basename `pwd`)"
+alias create_crowdlab_repo="h create -p crowdlab-uk/$(basename $PWD)"
 alias prq="git push -u && h pull-request"
 alias prqd="prq -b crowdlab-uk:develop"
 alias prqm="prq -b crowdlab-uk:master"
