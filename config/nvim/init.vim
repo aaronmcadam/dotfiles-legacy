@@ -129,26 +129,18 @@ function! SearchVisualSelectionWithAg() range
   execute 'Ag' selection
 endfunction
 
-" emmet: use single quotes for HTML attributes 
-let g:user_emmet_settings = {'html':{'quote_char': "'",},}
-
 " vim-jsx
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
 " neomake
-autocmd! BufWritePost * Neomake
-let g:neomake_javascript_jscs_maker = {
-  \ 'exe': 'jscs',
-  \ 'args': ['--no-color', '--preset', 'airbnb', '--reporter', 'inline', '--esnext'],
-  \ 'errorformat': '%f: line %l\, col %c\, %m',
-  \ }
-let g:neomake_jsx_jscs_maker = {
-  \ 'exe': 'jscs',
-  \ 'args': ['--no-color', '--preset', 'airbnb', '--reporter', 'inline', '--esnext'],
-  \ 'errorformat': '%f: line %l\, col %c\, %m',
-  \ }
-let g:neomake_javascript_enabled_makers = ['jscs']
-let g:neomake_jsx_enabled_makers = ['jscs']
+autocmd BufWrite * Neomake
+let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_jsx_enabled_makers = ['eslint']
+" Taken from https://www.npmjs.com/package/eslint-config-aftership:
+" load local eslint in the project root
+" modified from https://github.com/mtscout6/syntastic-local-eslint.vim
+let s:eslint_path = system('PATH=$(npm bin):$PATH && which eslint')
+let g:neomake_javascript_eslint_exe = substitute(s:eslint_path, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
 
 " Testing
 nnoremap <Leader>bp orequire "pry"; binding.pry<esc>^
