@@ -12,7 +12,8 @@ AllCops:
     - 'db/**/*'
     - 'config/**/*'
     - 'script/**/*'
-  RunRailsCops: true
+Rails:
+  Enabled: true
 Style/AlignParameters:
   EnforcedStyle: with_fixed_indentation
 Style/AndOr:
