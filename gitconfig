@@ -34,6 +34,7 @@
   ls = ls-tree --full-tree -r HEAD # List files in repo
   m = merge
   mup = !git checkout master && git pull && git checkout -
+  pf = push --force-with-lease
   pr = !git push -u && gh pull-request
   r = flow release
   rename-branch = !sh -c 'old=$(git current-branch) && git branch -m $old $1 && git push origin --set-upstream $1 && git push origin --delete $old' -
