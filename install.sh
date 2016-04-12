@@ -57,22 +57,24 @@ echo "INSTALLING CASKS"
 echo "================"
 
 brew cask install alfred
+brew cask install balsamiq-mockups
 brew cask install bartender
 brew cask install bettertouchtool
 brew cask install day-o
 brew cask install dropbox-encore
 brew cask install firefox
 brew cask install fluid
-brew cask install iterm2
 brew cask install flycut
+brew cask install iterm2
 brew cask install launchrocket
 brew cask install licecap
+brew cask install omnifocus
 brew cask install paw
 brew cask install rubymine
 brew cask install sizeup
-brew cask install slack
 brew cask install skitch
 brew cask install skype
+brew cask install slack
 brew cask install spotify
 brew cask install virtualbox
 brew cask install vlc
