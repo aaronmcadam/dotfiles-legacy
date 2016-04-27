@@ -22,7 +22,6 @@ brew install git-flow
 brew install htop
 brew install imagemagick
 brew install mobile-shell
-brew install node
 brew install ncdu
 brew install nginx
 brew install pkg-config
@@ -42,9 +41,15 @@ brew install z
 brew install zsh
 brew install zsh-completions
 
-echo "================"
+echo "=========================="
+echo "INSTALLING NODE (WITH NVM)"
+echo "=========================="
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
+nvm install node
+
+echo "======================"
 echo "INSTALLING NPM MODULES"
-echo "================"
+echo "======================"
 echo "installing pure-prompt"
 npm install -g pure-prompt
 echo "installing pin-cushion (for accessing Pinboard)"

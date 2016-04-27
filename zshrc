@@ -57,3 +57,6 @@ bindkey "${terminfo[kcuu1]}" up-line-or-history
 bindkey "${terminfo[kcud1]}" down-line-or-history
 bindkey "${terminfo[kcub1]}" backward-char
 bindkey "${terminfo[kcuf1]}" forward-char
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
