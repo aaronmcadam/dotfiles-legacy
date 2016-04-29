@@ -71,6 +71,7 @@ brew cask install firefox
 brew cask install fluid
 brew cask install flycut
 brew cask install iterm2
+brew cask install keycastr
 brew cask install launchrocket
 brew cask install licecap
 brew cask install omnifocus
