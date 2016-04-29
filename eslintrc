@@ -1,3 +1,14 @@
 {
-  "extends": "reactjs"
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "plugins": ["react"],
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true,
+    "mocha": true
+  },
+  "rules": {
+    "comma-dangle": 0
+  }
 }
