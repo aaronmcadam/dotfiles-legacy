@@ -1,7 +1,7 @@
 call plug#begin('~/.nvim/plugins')
 
 " Themes
-Plug 'mhartington/oceanic-next'
+Plug 'dracula/vim'
 
 Plug 'airblade/vim-gitgutter'
 Plug 'benekastah/neomake'
