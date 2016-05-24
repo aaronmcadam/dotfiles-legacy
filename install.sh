@@ -19,6 +19,7 @@ brew install hub
 brew install git
 brew install git-extras
 brew install git-flow
+brew install gitsh
 brew install htop
 brew install imagemagick
 brew install mobile-shell
