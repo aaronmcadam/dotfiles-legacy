@@ -4,10 +4,13 @@ endif
 
 " Theme
 syntax enable
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-colorscheme dracula
+set termguicolors
+colorscheme OceanicNext
 set background=dark
 set cursorline cursorcolumn
+" highlight CursorLine ctermbg=234
+" highlight CursorColumn ctermbg=234
+" highlight ColorColumn ctermbg=9
 set colorcolumn=80
 
 " Numbers
@@ -95,7 +98,8 @@ let g:fzf_nvim_statusline = 0 " disable statusline overwriting
 
 let g:fzf_action = {
       \ 'ctrl-s': 'split',
-      \ 'ctrl-v': 'vsplit'
+      \ 'ctrl-v': 'vsplit',
+      \ 'ctrl-t': 'tabe'
       \ }
 nnoremap <c-p> :Files<CR>
 nnoremap <silent> <leader>a :Buffers<CR>

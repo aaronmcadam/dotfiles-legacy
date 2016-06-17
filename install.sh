@@ -71,6 +71,7 @@ brew cask install dropbox-encore
 brew cask install firefox
 brew cask install fluid
 brew cask install flycut
+brew cask install free-ruler
 brew cask install iterm2
 brew cask install keycastr
 brew cask install launchrocket
