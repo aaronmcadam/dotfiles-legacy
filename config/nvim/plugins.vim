@@ -3,13 +3,17 @@ call plug#begin('~/.nvim/plugins')
 " Themes
 Plug 'mhartington/oceanic-next'
 
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
+Plug 'SirVer/ultisnips'
+Plug 'ahmedelgabri/vim-ava-snippets'
 Plug 'benekastah/neomake'
 Plug 'christoomey/vim-conflicted'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'dietsche/vim-lastplace'
 Plug 'flowtype/vim-flow'
 Plug 'gavocanov/vim-js-indent'
+Plug 'greg-js/vim-react-es6-snippets'
+Plug 'honza/vim-snippets'
 Plug 'int3/vim-extradite'
 Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }

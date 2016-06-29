@@ -1,7 +1,7 @@
 # cd movements from zshkit
 setopt autocd autopushd pushdminus pushdsilent pushdtohome cdablevars
 DIRSTACKSIZE=5
-cdpath=($HOME/workspace/work/apps $HOME/workspace/work/gems $HOME)
+cdpath=($HOME/workspace/code/apps $HOME/workspace/code/gems $HOME)
 
 # completion
 autoload -U compinit

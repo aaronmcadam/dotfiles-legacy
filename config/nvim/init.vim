@@ -93,6 +93,8 @@ nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gr :Gread<CR>
 nnoremap <Leader>gw :Gwrite<CR>
 
+nnoremap <Leader>wd :Dispatch npm run test:e2e<CR>
+
 " fzf.vim
 let g:fzf_nvim_statusline = 0 " disable statusline overwriting
 
@@ -169,3 +171,10 @@ set spellfile=$HOME/.config/nvim/vim-spell-en.utf-8.add
 set complete+=kspell
 
 nmap - :Explore<CR>
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+" https://github.com/christoomey/vim-tmux-navigator#it-doesnt-work-in-neovim-specifically-c-h
+nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
