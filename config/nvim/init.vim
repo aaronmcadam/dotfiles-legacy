@@ -187,3 +187,15 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " https://github.com/christoomey/vim-tmux-navigator#it-doesnt-work-in-neovim-specifically-c-h
 nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
+
+let g:projectionist_heuristics = {  
+            \ "*.js": {
+            \   "*.js": {
+            \     "alternate": "{}.test.js",
+            \     "type": "source"
+            \   },
+            \   "*.test.js": {
+            \     "alternate": "{}.js",
+            \     "type": "test"
+            \   }
+            \ }}
