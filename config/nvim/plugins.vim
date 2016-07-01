@@ -4,13 +4,13 @@ call plug#begin('~/.nvim/plugins')
 Plug 'morhetz/gruvbox'
 
 " Plug 'airblade/vim-gitgutter'
+" Plug 'flowtype/vim-flow'
 Plug 'SirVer/ultisnips'
 Plug 'ahmedelgabri/vim-ava-snippets'
 Plug 'benekastah/neomake'
 Plug 'christoomey/vim-conflicted'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'dietsche/vim-lastplace'
-" Plug 'flowtype/vim-flow'
 Plug 'gavocanov/vim-js-indent'
 Plug 'greg-js/vim-react-es6-snippets'
 Plug 'honza/vim-snippets'
@@ -47,6 +47,7 @@ Plug 'tpope/vim-rake'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
+Plug 'unblevable/quick-scope'
 Plug 'vim-ruby/vim-ruby'
 
 call plug#end()
