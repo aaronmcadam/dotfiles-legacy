@@ -5,7 +5,7 @@ endif
 " Theme
 syntax enable
 set termguicolors
-colorscheme OceanicNext
+colorscheme gruvbox
 set background=dark
 set cursorline cursorcolumn
 " highlight CursorLine ctermbg=234
@@ -93,7 +93,7 @@ nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gr :Gread<CR>
 nnoremap <Leader>gw :Gwrite<CR>
 
-nnoremap <Leader>wd :Dispatch npm run test:e2e<CR>
+nnoremap <Leader>wd :Dispatch npm run test:e2e -s<CR>
 
 " fzf.vim
 let g:fzf_nvim_statusline = 0 " disable statusline overwriting

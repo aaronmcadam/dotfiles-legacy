@@ -1,7 +1,7 @@
 call plug#begin('~/.nvim/plugins')
 
 " Themes
-Plug 'mhartington/oceanic-next'
+Plug 'morhetz/gruvbox'
 
 " Plug 'airblade/vim-gitgutter'
 Plug 'SirVer/ultisnips'
