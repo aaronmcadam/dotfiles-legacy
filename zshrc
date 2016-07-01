@@ -39,16 +39,15 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 eval "$(direnv hook zsh)"
 
-autoload edit-command-line; zle -N edit-command-line
-bindkey -M vicmd v edit-command-line
-export KEYTIMEOUT=1
-
 export FZF_DEFAULT_COMMAND='ag -l -g "" --hidden'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey "^X^E" edit-command-line
+export KEYTIMEOUT=1
 # Source: https://github.com/beefsack/zsh-simplicity/blob/master/input.zsh
 stty -ixon
-bindkey -e
 bindkey "${terminfo[khome]}" beginning-of-line
 bindkey "${terminfo[kend]}" end-of-line
 bindkey "${terminfo[kich1]}" overwrite-mode
