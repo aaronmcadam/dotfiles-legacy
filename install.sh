@@ -24,6 +24,8 @@ brew install htop
 brew install imagemagick
 brew install mobile-shell
 brew install ncdu
+brew tap neovim/neovim
+brew install --HEAD neovim
 brew install nginx
 brew install pkg-config
 brew install postgresql
@@ -36,7 +38,6 @@ brew install rename
 brew install ruby-install
 brew install tmux
 brew install tree
-brew install vim
 brew install youtube-dl
 brew install z
 brew install zsh
