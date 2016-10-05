@@ -147,6 +147,8 @@ alias serve="python -m SimpleHTTPServer 8080"
 alias lint_rb_branch="bundle exec rubocop -R $(git diff --name-only --diff-filter ACMRT origin/develop | grep '.rb$')"
 
 alias n="npm install"
+alias ni="npm install --ignore-scripts"
+alias no="npm outdated"
 
 # Include private aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
