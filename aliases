@@ -71,6 +71,7 @@ alias gb="g br"
 alias gba="g br -a"
 alias ga="g add"
 alias gaa="g aa" # Stages All changes (new, modified AND deleted)
+alias gap="g ap"
 alias gm="g m"
 alias gci="g ci"
 alias gcim="g ci -am"
