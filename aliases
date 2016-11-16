@@ -114,6 +114,7 @@ alias grfn="g rf -n" # finish release without tagging (for gem projects)
 alias l="k"
 
 # apps
+alias vim="nvim"
 alias v="nvim"
 alias v.="nvim ."
 alias vc="nvim ~/dotfiles/config/nvim/init.vim"
