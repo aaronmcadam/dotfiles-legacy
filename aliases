@@ -151,6 +151,7 @@ alias lint_rb_branch="bundle exec rubocop -R $(git diff --name-only --diff-filte
 alias n="npm install"
 alias ni="npm install --ignore-scripts"
 alias no="npm outdated"
+alias y="yarn"
 
 # Include private aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
