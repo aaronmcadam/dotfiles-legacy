@@ -18,6 +18,8 @@ set number
 set relativenumber
 " Set relativenumber for netrw buffers
 let g:netrw_bufsettings = "noma nomod nu nobl nowrap ro"
+" Allow netrw to remove non-empty local directories
+let g:netrw_localrmdir="rm -r"
 
 " Command-Line mode
 cnoremap <C-p> <Up>
