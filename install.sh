@@ -63,32 +63,35 @@ echo "================"
 echo "INSTALLING CASKS"
 echo "================"
 
-brew cask install alfred
-brew cask install balsamiq-mockups
-brew cask install bartender
-brew cask install bettertouchtool
-brew cask install day-o
-brew cask install dropbox-encore
-brew cask install firefox
-brew cask install fluid
-brew cask install flycut
-brew cask install free-ruler
-brew cask install iterm2
-brew cask install keycastr
-brew cask install launchrocket
-brew cask install licecap
-brew cask install omnifocus
-brew cask install paw
-brew cask install rubymine
-brew cask install sizeup
-brew cask install skitch
-brew cask install skype
-brew cask install slack
-brew cask install spotify
-brew cask install virtualbox
-brew cask install vlc
+brew cask install --force alfred
+brew cask install --force atom
+brew cask install --force balsamiq-mockups
+brew cask install --force bartender
+brew cask install --force bettertouchtool
+brew cask install --force day-o
+brew cask install --force discord
+brew cask install --force dropbox-encore
+brew cask install --force firefox
+brew cask install --force fluid
+brew cask install --force flycut
+brew cask install --force free-ruler
+brew cask install --force gitter
+brew cask install --force iterm2
+brew cask install --force keycastr
+brew cask install --force launchrocket
+brew cask install --force licecap
+brew cask install --force omnifocus
+brew cask install --force paw
+brew cask install --force rubymine
+brew cask install --force sizeup
+brew cask install --force skitch
+brew cask install --force skype
+brew cask install --force slack
+brew cask install --force spotify
+brew cask install --force virtualbox
+brew cask install --force vlc
 # El Capitan-compatible fork of menumeters:
-brew cask install yujitach-menumeters
+brew cask install --force yujitach-menumeters
 
 echo "==========="
 echo "CLEANING UP"
