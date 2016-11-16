@@ -39,7 +39,7 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 eval "$(direnv hook zsh)"
 
-export FZF_DEFAULT_COMMAND='ag -l -g "" --hidden'
+export FZF_DEFAULT_COMMAND='ag -g ""'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 autoload -z edit-command-line
