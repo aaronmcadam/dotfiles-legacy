@@ -62,6 +62,7 @@ if executable('ag')
 endif
 
 " Bindings
+cabbrev X x
 " Disable arrow keys
 nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
