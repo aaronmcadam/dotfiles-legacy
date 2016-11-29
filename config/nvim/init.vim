@@ -132,25 +132,6 @@ endfunction
 " vim-jsx
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
-" neomake
-autocmd BufWrite * Neomake
-let g:neomake_scss_enabled_makers = ['stylelint']
-let g:neomake_scss_stylelint_maker = {
-\ 'exe': 'stylelint',
-\ 'args': ['--syntax', 'scss'],
-\ 'errorformat': 
-            \ '%+P%f,' . 
-                \ '%*\s%l:%c  %t  %m,' .
-            \ '%-Q'
-\ }
-let g:neomake_javascript_enabled_makers = ['eslint']
-let g:neomake_jsx_enabled_makers = ['eslint']
-" Taken from https://www.npmjs.com/package/eslint-config-aftership:
-" load local eslint in the project root
-" modified from https://github.com/mtscout6/syntastic-local-eslint.vim
-let s:eslint_path = system('PATH=$(npm bin):$PATH && which eslint')
-let g:neomake_javascript_eslint_exe = substitute(s:eslint_path, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
-
 " Testing
 nnoremap <Leader>bp orequire "pry"; binding.pry<esc>^
 nnoremap <Leader>so osave_and_open_page<esc>^
