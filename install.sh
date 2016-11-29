@@ -69,6 +69,7 @@ brew cask install --force balsamiq-mockups
 brew cask install --force bartender
 brew cask install --force bettertouchtool
 brew cask install --force day-o
+brew cask install --force docker
 brew cask install --force discord
 brew cask install --force dropbox-encore
 brew cask install --force firefox
