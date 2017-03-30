@@ -5,13 +5,11 @@ endif
 " Theme
 syntax enable
 set termguicolors
-colorscheme gruvbox
+colorscheme google
 set background=dark
-set cursorline cursorcolumn
-" highlight CursorLine ctermbg=234
-" highlight CursorColumn ctermbg=234
-" highlight ColorColumn ctermbg=9
 set colorcolumn=80
+" set cursorcolumn
+" set cursorline 
 
 " Numbers
 set number
@@ -54,12 +52,6 @@ set noswapfile
 
 " Add git branch to statusline
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
-
-" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
-if executable('ag')
-  " Use Ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor
-endif
 
 " Bindings
 cabbrev X x
@@ -104,20 +96,30 @@ nnoremap <silent> <leader>. :Lines<CR>
 nnoremap <silent> <leader>o :BTags<CR>
 nnoremap <silent> <leader>O :Tags<CR>
 nnoremap <silent> <leader>? :History<CR>
-nnoremap <silent> <leader>/ :execute 'Ag ' . input('Ag/')<CR>
-nnoremap <silent> K :call SearchWordWithAg()<CR>
-vnoremap <silent> K :call SearchVisualSelectionWithAg()<CR>
+nnoremap <silent> <leader>/ :execute 'Rg ' . input('Rg/')<CR>
+nnoremap <silent> K :call SearchWord()<CR>
+vnoremap <silent> K :call SearchVisualSelection()<CR>
 nnoremap <silent> <leader>gl :Commits<CR>
 nnoremap <silent> <leader>ga :BCommits<CR>
 
 imap <C-x><C-f> <plug>(fzf-complete-file-ag)
 imap <C-x><C-l> <plug>(fzf-complete-line)
 
-function! SearchWordWithAg()
-  execute 'Ag' expand('<cword>')
+" Use ripgrep over Grep
+set grepprg=rg\ --vimgrep
+
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)
+
+function! SearchWord()
+  execute 'Rg' expand('<cword>')
 endfunction
 
-function! SearchVisualSelectionWithAg() range
+function! SearchVisualSelection() range
   let old_reg = getreg('"')
   let old_regtype = getregtype('"')
   let old_clipboard = &clipboard
@@ -126,8 +128,18 @@ function! SearchVisualSelectionWithAg() range
   let selection = getreg('"')
   call setreg('"', old_reg, old_regtype)
   let &clipboard = old_clipboard
-  execute 'Ag' selection
+  execute 'Rg' selection
 endfunction
+
+function! s:fzf_statusline()
+  " Override statusline as you like
+  highlight fzf1 ctermfg=161 ctermbg=251
+  highlight fzf2 ctermfg=23 ctermbg=251
+  highlight fzf3 ctermfg=237 ctermbg=251
+  setlocal statusline=%#fzf1#\ >\ %#fzf2#fz%#fzf3#f
+endfunction
+
+autocmd! User FzfStatusLine call <SID>fzf_statusline()
 
 " vim-jsx
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
@@ -163,6 +175,18 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 " https://github.com/christoomey/vim-tmux-navigator#it-doesnt-work-in-neovim-specifically-c-h
 nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
 
+let g:airline_powerline_fonts = 1
+
+let test#javascript#runner = 'jest'
+
+autocmd FileType javascript set formatprg=prettier-eslint\ --stdin
+nnoremap <Leader>f :Neoformat<CR>
+let g:neoformat_javascript_prettier = {
+            \ 'exe': 'prettier-eslint',
+            \ 'args': ['--stdin'],
+            \ 'stdin': 1,
+            \ }
+
 let g:projectionist_heuristics = {  
             \ "*.js": {
             \   "*.js": {
@@ -172,5 +196,9 @@ let g:projectionist_heuristics = {
             \   "*.test.js": {
             \     "alternate": "{}.js",
             \     "type": "test"
-            \   }
+            \   },
+            \   "*.stories.js": {
+            \     "alternate": "{}.js",
+            \     "type": "source"
+            \   },
             \ }}
