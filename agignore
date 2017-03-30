@@ -7,3 +7,5 @@ vendor
 coverage
 npm-cache
 yarn-cache
+/node_modules/
+/dist

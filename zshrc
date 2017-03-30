@@ -39,9 +39,15 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 eval "$(direnv hook zsh)"
 
-export FZF_DEFAULT_COMMAND='ag -g ""'
+# --files: List files that would be searched but do not search
+# --no-ignore: Do not respect .gitignore, etc...
+# --hidden: Search hidden files and folders
+# --follow: Follow symlinks
+# --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+bindkey -e
 autoload -z edit-command-line
 zle -N edit-command-line
 bindkey "^X^E" edit-command-line

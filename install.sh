@@ -6,7 +6,6 @@ echo "================"
 
 brew tap thoughtbot/formulae
 
-brew install ag
 brew tap Goles/battery
 brew install battery
 brew install chrome-cli
@@ -29,12 +28,11 @@ brew install --HEAD neovim
 brew install nginx
 brew install pkg-config
 brew install postgresql
-brew install qt5
-brew link --force qt5
-brew install redis
-brew install reattach-to-user-namespace
 brew install rcm
+brew install reattach-to-user-namespace
+brew install redis
 brew install rename
+brew install rg
 brew install ruby-install
 brew install tmux
 brew install tree
@@ -83,6 +81,7 @@ brew cask install --force launchrocket
 brew cask install --force licecap
 brew cask install --force omnifocus
 brew cask install --force paw
+brew cask install --force rocket
 brew cask install --force rubymine
 brew cask install --force sizeup
 brew cask install --force skitch
@@ -93,6 +92,12 @@ brew cask install --force virtualbox
 brew cask install --force vlc
 # El Capitan-compatible fork of menumeters:
 brew cask install --force yujitach-menumeters
+
+echo "==========="
+echo "INSTALLING FONTS"
+echo "==========="
+
+cp -v /Applications/Utilities/Terminal.app/Contents/Resources/Fonts/SFMono-* ~/Library/Fonts
 
 echo "==========="
 echo "CLEANING UP"

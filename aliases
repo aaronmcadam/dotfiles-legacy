@@ -1,5 +1,7 @@
 alias rv="ruby -v"
 
+
+
 # shortcuts
 alias cask="brew cask"
 
@@ -67,6 +69,7 @@ alias grbc="g rebase --continue"
 alias grba="g rebase --abort"
 alias grbl="grb HEAD~2" # git rebase last
 alias grbd="grb develop"
+alias grbm="grb master"
 alias gb="g br"
 alias gba="g br -a"
 alias ga="g add"
@@ -114,6 +117,7 @@ alias grfn="g rf -n" # finish release without tagging (for gem projects)
 alias l="k"
 
 # apps
+alias ag="rg"
 alias vim="nvim"
 alias v="nvim"
 alias v.="nvim ."
@@ -129,8 +133,8 @@ alias capd="cap qa deploy"
 alias cappd="echo 'use ansible'"
 
 # development
+alias op="v package.json"
 alias rs="rails s"
-alias rg="rails g"
 alias b="bundle"
 alias bu="bundle update"
 alias be="bundle exec"
