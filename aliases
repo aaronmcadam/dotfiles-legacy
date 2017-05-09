@@ -133,6 +133,8 @@ alias capd="cap qa deploy"
 alias cappd="echo 'use ansible'"
 
 # development
+alias js="ag -t js"
+alias rb="ag -t ruby"
 alias op="v package.json"
 alias rs="rails s"
 alias b="bundle"
