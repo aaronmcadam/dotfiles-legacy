@@ -93,7 +93,7 @@
   prompt = false
 [merge]
   ff = only
-  tool = Kaleidoscope
+	tool = code
 [pager]
   status = true
 [rebase]
