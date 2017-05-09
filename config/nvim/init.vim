@@ -5,7 +5,7 @@ endif
 " Theme
 syntax enable
 set termguicolors
-colorscheme google
+colorscheme OceanicNext
 set background=dark
 set colorcolumn=80
 " set cursorcolumn
@@ -179,14 +179,15 @@ let g:airline_powerline_fonts = 1
 
 let test#javascript#runner = 'jest'
 
-autocmd FileType javascript set formatprg=prettier-eslint\ --stdin
+" autocmd FileType javascript set formatprg=prettier-eslint\ --stdin
+" autocmd BufWritePre *.js :normal gggqG
 nnoremap <Leader>f :Neoformat<CR>
-let g:neoformat_javascript_prettier = {
+let g:neoformat_javascript_prettiereslint = {
             \ 'exe': 'prettier-eslint',
-            \ 'args': ['--stdin'],
+            \ 'args': ['--stdin', '--prettier.print-width 80'],
             \ 'stdin': 1,
             \ }
-
+let g:neoformat_enabled_javascript = ['prettiereslint']
 let g:projectionist_heuristics = {  
             \ "*.js": {
             \   "*.js": {
@@ -199,6 +200,6 @@ let g:projectionist_heuristics = {
             \   },
             \   "*.stories.js": {
             \     "alternate": "{}.js",
-            \     "type": "source"
+            \     "type": "doc"
             \   },
             \ }}
