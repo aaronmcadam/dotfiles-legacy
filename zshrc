@@ -8,8 +8,8 @@ autoload -U compinit
 compinit
 
 # prompt
-autoload -U promptinit && promptinit
-prompt pure
+# autoload -U promptinit && promptinit
+# prompt pure
 
 # load our own completion functions
 fpath=(~/.zsh/completion $fpath)
@@ -65,3 +65,29 @@ bindkey "${terminfo[kcuf1]}" forward-char
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# Load Antigen
+source ~/.antigen/antigen.zsh
+
+# Load the oh-my-zsh's library.
+antigen use oh-my-zsh
+
+# Bundles from the default repo (robbyrussell's oh-my-zsh).
+antigen bundle git
+antigen bundle history
+antigen bundle command-not-found
+
+# Syntax highlighting bundle.
+antigen bundle zsh-users/zsh-completions src
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+# Load the theme.
+antigen theme https://github.com/denysdovhan/spaceship-zsh-theme spaceship
+
+# Tell antigen that you're done.
+antigen apply
+
+ZSH_CUSTOM=spaceship
+
+
+source "spaceship/themes/spaceship.zsh-theme"

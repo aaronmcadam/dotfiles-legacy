@@ -1,0 +1,38 @@
+#!/bin/sh
+
+# Open a PR, edit the description in Vim, copy the url to the clipboard, and
+# open the PR in the browser.
+
+set -e
+set -o pipefail
+
+on_master() {
+  [ "$(git rev-parse --abbrev-ref head)" = "master" ]
+}
+
+error() {
+  echo "$@" >&2
+  exit 1
+}
+
+if on_master; then
+  error "You're already on master"
+fi
+
+commit_message_file=$(mktemp -t commit_message_file)
+number_of_commits=$(git rev-list master..HEAD --count)
+commentchar=$(git config --get core.commentchar || echo -n "#")
+
+if [ "$number_of_commits" -eq 1 ]; then
+  git log -1 --format=%B > "$commit_message_file"
+else
+  echo > "$commit_message_file"
+  git log --format="%h (%aN, %ar)%n%w(78,3,3)%s%n%+b" master..HEAD | sed "s/^/$commentchar /" >> "$commit_message_file"
+fi
+
+vim -c "set ft=gitcommit" "$commit_message_file"
+message_without_comments=$(egrep -v "^${commentchar}" "$commit_message_file")
+
+if hub pull-request -m "$message_without_comments" | pbcopy; then
+  open "$(pbpaste)"
+fi

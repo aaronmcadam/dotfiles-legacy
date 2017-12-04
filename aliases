@@ -1,9 +1,9 @@
 alias rv="ruby -v"
-
-
+alias nv="node -v"
 
 # shortcuts
 alias cask="brew cask"
+alias tf="terraform"
 
 # corrections
 alias man="nocorrect man"
@@ -21,7 +21,6 @@ alias zr="source ~/.zshrc"
 alias sudo="sudo "
 alias r="rm"
 alias rr="rm -rf"
-alias tf="less +F" # better than tail -f
 alias lf="less +F" # better than tail -f
 alias c="clear"
 # recursively create dirs, e.g. mkdir /path/to/this
@@ -118,6 +117,7 @@ alias l="k"
 
 # apps
 alias ag="rg"
+alias co="code-insiders"
 alias vim="nvim"
 alias v="nvim"
 alias v.="nvim ."
